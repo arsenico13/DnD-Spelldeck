@@ -1,0 +1,38 @@
+{
+    "Flail": {
+        "classes": [
+            "Martial weapon"
+        ],
+        "components": [
+            "M",
+        ],
+        "duration": "2 lb",
+        "level": 0,
+        "material": null,
+        "range": "10 gp",
+        "ritual": false,
+        "school": "1d8 bludgeoning",
+        "source": "Player's Handbook",
+        "source_page": 149,
+        "text": "Martial weapon, melee weapon.",
+        "time": "1 action"
+    },
+    "Glaive": {
+        "classes": [
+            "Martial weapon"
+        ],
+        "components": [
+            "M"
+        ],
+        "duration": "6 lb",
+        "level": 0,
+        "material": null,
+        "range": "20 gp",
+        "ritual": false,
+        "school": "1d10 slashing",
+        "source": "Player's Handbook",
+        "source_page": 149,
+        "text": "HEAVY: Creatures that are Small or Tiny have disadvantage on attack rolls with heavy weapons. - REACH: This weapon adds 5 feet to your reach when you attack with it. This property also determines your reach for opportunity attacks with a reach weapon. - TWO-HANDED: This weapon requires two hands to use.",
+        "time": "1 action"
+    }
+}
