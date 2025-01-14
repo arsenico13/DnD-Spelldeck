@@ -1,4 +1,4 @@
-Il file LaTeX `carte.tex` genera un layout di carte personalizzate, probabilmente per un gioco di ruolo o una collezione di incantesimi. Di seguito è spiegato in dettaglio cosa fa:
+Il file LaTeX `cards.tex` genera un layout di carte personalizzate, probabilmente per un gioco di ruolo o una collezione di incantesimi. Di seguito è spiegato in dettaglio cosa fa:
 
 ### **1. Classe del documento e pacchetti utilizzati**
 - **`article`**: Classe del documento, usata per documenti brevi e semplici.
