@@ -241,7 +241,7 @@
         "text": "You create a ghostly, skeletal hand in the space of a creature within range. Make a ranged spell attack against the creature to assail it with the chill of the grave. On a hit, the target takes 1d8 necrotic damage, and it can't regain hit points until the start of your next turn. Until then, the hand clings to the target. If you hit an undead target, it also has disadvantage on attack rolls against you until the end of your next turn. This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
         "time": "1 action"
     },
-    "Chromatic Orb": {
+    "Chromatic Orb (1)": {
         "classes": [
             "Fighter",
             "Sorcerer",
@@ -260,10 +260,32 @@
         "school": "Evocation",
         "source": "Player's Handbook",
         "source_page": 221,
-        "text": "You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose. At Higher Levels: When you cast this spell using a spell slot of or higher, the damage increases by 1d8 for each slot level above 1st. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+        "text": "You hurl a 4-inch-diameter sphere of energy at a creature that you can see within range. You choose acid, cold, fire, lightning, poison, or thunder for the type of orb you create, and then make a ranged spell attack against the target. If the attack hits, the creature takes 3d8 damage of the type you chose. [...]",
         "time": "1 action"
     },
-    "Color Spray": {
+    "Chromatic Orb (2)": {
+        "classes": [
+            "Fighter",
+            "Sorcerer",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Instantaneous",
+        "level": 1,
+        "material": "a diamond worth at least 50 gp",
+        "range": "90 feet",
+        "ritual": false,
+        "school": "Evocation",
+        "source": "Player's Handbook",
+        "source_page": 221,
+        "text": "[...] At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+        "time": "1 action"
+    },
+    "Color Spray (1)": {
         "classes": [
             "Rogue",
             "Sorcerer",
@@ -282,7 +304,29 @@
         "school": "Illusion",
         "source": "Player's Handbook",
         "source_page": 222,
-        "text": "A dazzling array of flashing, colored light springs from your hand. Roll 6d10, the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can't see). Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for the creature to be affected. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st.",
+        "text": "A dazzling array of flashing, colored light springs from your hand. Roll 6d10, the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can't see). Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. [...]",
+        "time": "1 action"
+    },
+    "Color Spray (2)": {
+        "classes": [
+            "Rogue",
+            "Sorcerer",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "1 round",
+        "level": 1,
+        "material": "a pinch of powder or sand that is colored red, yellow, and blue",
+        "range": "Self (15-foot cone)",
+        "ritual": false,
+        "school": "Illusion",
+        "source": "Player's Handbook",
+        "source_page": 222,
+        "text": "[...] Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for the creature to be affected. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st.",
         "time": "1 action"
     },
     "Command": {
@@ -482,7 +526,7 @@
         "text": "For the duration, you can sense the presence and location of poisons, poisonous creatures, and diseases within 30 feet of you. You also identify the kind of poison, poisonous creature, or disease in each case. The spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
         "time": "1 action"
     },
-    "Disguise Self": {
+    "Disguise Self (1)": {
         "classes": [
             "Rogue",
             "Sorcerer",
@@ -502,7 +546,30 @@
         "school": "Illusion",
         "source": "Player's Handbook",
         "source_page": 233,
-        "text": "You make yourself, including your clothing, armor, weapons, and other belongings on your person, look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can't change your body type, so you must adopt a form that has the same basic arrangement of limbs. Otherwise, the extent of the illusion is up to you. The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing or would feel your head and hair. If you use this spell to appear thinner than you are, the hand of someone who reaches out to touch you would bump into you while it was seemingly still in midair. To discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC.",
+        "text": "You make yourself, including your clothing, armor, weapons, and other belongings on your person, look different until the spell ends or until you use your action to dismiss it. You can seem 1 foot shorter or taller and can appear thin, fat, or in between. You can't change your body type, so you must adopt a form that has the same basic arrangement of limbs. Otherwise, the extent of the illusion is up to you. [...]",
+        "time": "1 action"
+    },
+    "Disguise Self (2)": {
+        "classes": [
+            "Rogue",
+            "Sorcerer",
+            "Cleric",
+            "Wizard",
+            "Bard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "1 hour",
+        "level": 1,
+        "material": null,
+        "range": "Self",
+        "ritual": false,
+        "school": "Illusion",
+        "source": "Player's Handbook",
+        "source_page": 233,
+        "text": "[...] The changes wrought by this spell fail to hold up to physical inspection. For example, if you use this spell to add a hat to your outfit, objects pass through the hat, and anyone who touches it would feel nothing or would feel your head and hair. If you use this spell to appear thinner than you are, the hand of someone who reaches out to touch you would bump into you while it was seemingly still in midair. To discern that you are disguised, a creature can use its action to inspect your appearance and must succeed on an Intelligence (Investigation) check against your spell save DC.",
         "time": "1 action"
     },
     "Dissonant Whispers": {
@@ -1693,7 +1760,7 @@
         "text": "You create the image of an object, a creature, or some other visible phenomenon that is no larger than a 15-foot cube. The image appears at a spot within range and lasts for the duration. The image is purely visual, it isn't accompanied by sound, smell, or other sensory effects. You can use your action to cause the image to move to any spot within range. As the image changes location, you can alter its appearance so that its movements appear natural for the image. For example, if you create an image of a creature and move it, you can alter the image so that it appears to be walking. Physical interaction with the image reveals it to be an illusion, because things can pass through it. A creature that uses its action to examine the image can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the creature can see through the image.",
         "time": "1 action"
     },
-    "Sleep": {
+    "Sleep (1)": {
         "classes": [
             "Rogue",
             "Sorcerer",
@@ -1714,7 +1781,31 @@
         "school": "Enchantment",
         "source": "Player's Handbook",
         "source_page": 276,
-        "text": "This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures). Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected. Undead and creatures immune to being charmed aren't affected by this spell. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.",
+        "text": "This spell sends creatures into a magical slumber. Roll 5d8, the total is how many hit points of creatures this spell can affect. Creatures within 20 feet of a point you choose within range are affected in ascending order of their current hit points (ignoring unconscious creatures). Starting with the creature that has the lowest current hit points, each creature affected by this spell falls unconscious until the spell ends, [...]",
+        "time": "1 action"
+    },
+    "Sleep (2)": {
+        "classes": [
+            "Rogue",
+            "Sorcerer",
+            "Warlock",
+            "Wizard",
+            "Bard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "1 minute",
+        "level": 1,
+        "material": "a pinch of find sand, rose petals, or a cricket",
+        "range": "90 feet",
+        "ritual": false,
+        "school": "Enchantment",
+        "source": "Player's Handbook",
+        "source_page": 276,
+        "text": "[...] the sleeper takes damage, or someone uses an action to shake or slap the sleeper awake. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for that creature to be affected. Undead and creatures immune to being charmed aren't affected by this spell. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d8 for each slot level above 1st.",
         "time": "1 action"
     },
     "Spare the Dying": {
