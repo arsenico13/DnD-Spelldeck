@@ -42,7 +42,7 @@
         "text": "Your spell bolsters your allies with toughness and resolve. Choose up to three creatures within range. Each target's hit point maximum and current hit points increase by 5 for the duration. At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, a target's hit points increase by an additional 5 for each slot level above 2nd.",
         "time": "1 action"
     },
-    "Alarm": {
+    "Alarm (1)": {
         "classes": [
             "Fighter",
             "Ranger",
@@ -61,7 +61,29 @@
         "school": "Abjuration",
         "source": "Player's Handbook",
         "source_page": 211,
-        "text": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
+        "text": "You set an alarm against unwanted intrusion. Choose a door, a window, or an area within range that is no larger than a 20-foot cube. Until the spell ends, an alarm alerts you whenever a tiny or larger creature touches or enters the warded area. When you cast the spell, you can designate creatures that won't set off the alarm. You also choose whether the alarm is mental or audible. [...]",
+        "time": "1 minute"
+    },
+    "Alarm (2)": {
+        "classes": [
+            "Fighter",
+            "Ranger",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "8 hours",
+        "level": 1,
+        "material": "a tiny bell and a piece of fine silver wire",
+        "range": "30 feet",
+        "ritual": true,
+        "school": "Abjuration",
+        "source": "Player's Handbook",
+        "source_page": 211,
+        "text": "[...] A mental alarm alerts you with a ping in your mind if you are within 1 mile of the warded area. This ping awakens you if you are sleeping. An audible alarm produces the sound of a hand bell for 10 seconds within 60 feet.",
         "time": "1 minute"
     },
     "Alter Self": {
@@ -2873,7 +2895,7 @@
         "text": "You touch a willing creature and put it into a cataleptic state that is indistinguishable from death. For the spell's duration, or until you use an action to touch the target and dismiss the spell, the target appears dead to all outward inspection and to spells used to determine the target's status. The target is blinded and incapacitated, and its speed drops to 0. The target has resistance to all damage except psychic damage. If the target is diseased or poisoned when you cast the spell, or becomes diseased or poisoned while under the spell's effect, the disease and poison have no effect until the spell ends.",
         "time": "1 action"
     },
-    "Find Familiar": {
+    "Find Familiar (1)": {
         "classes": [
             "Wizard"
         ],
@@ -2890,7 +2912,47 @@
         "school": "Conjuration",
         "source": "Player's Handbook",
         "source_page": 240,
-        "text": "You gain the service of a familiar, a spirit that takes an animal form you choose - bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey or fiend (your choice) instead of a beast. Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal. When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again. While your familiar is within 100 feet of you, you can communicate with it telepathically. Additionally, as an action, you can see through your familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses. As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits you summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you. You can't have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature. Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your attack modifier for the roll.",
+        "text": "You gain the service of a familiar, a spirit that takes an animal form you choose - bat, cat, crab, frog (toad), hawk, lizard, octopus, owl, poisonous snake, fish (quipper), rat, raven, sea horse, spider, or weasel. Appearing in an unoccupied space within range, the familiar has the statistics of the chosen form, though it is a celestial, fey or fiend (your choice) instead of a beast. [...]",
+        "time": "1 hour"
+    },
+    "Find Familiar (2)": {
+        "classes": [
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Instantaneous",
+        "level": 1,
+        "material": "10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier",
+        "range": "10 feet",
+        "ritual": true,
+        "school": "Conjuration",
+        "source": "Player's Handbook",
+        "source_page": 240,
+        "text": "[...] Your familiar acts independently of you, but it always obeys your commands. In combat, it rolls its own initiative and acts on its own turn. A familiar can't attack, but it can take other actions as normal. When the familiar drops to 0 hit points, it disappears, leaving behind no physical form. It reappears after you cast this spell again. While your familiar is within 100 feet of you, [...]",
+        "time": "1 hour"
+    },
+    "Find Familiar (3)": {
+        "classes": [
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Instantaneous",
+        "level": 1,
+        "material": "10 gp worth of charcoal, incense, and herbs that must be consumed by fire in a brass brazier",
+        "range": "10 feet",
+        "ritual": true,
+        "school": "Conjuration",
+        "source": "Player's Handbook",
+        "source_page": 240,
+        "text": "[...] you can communicate with it telepathically. Additionally, as an action, you can see through your familiar's eyes and hear what it hears until the start of your next turn, gaining the benefits of any special senses that the familiar has. During this time, you are deaf and blind with regard to your own senses. As an action, you can temporarily dismiss your familiar. It disappears into a pocket dimension where it awaits you summons. Alternatively, you can dismiss it forever. As an action while it is temporarily dismissed, you can cause it to reappear in any unoccupied space within 30 feet of you. You can't have more than one familiar at a time. If you cast this spell while you already have a familiar, you instead cause it to adopt a new form. Choose one of the forms from the above list. Your familiar transforms into the chosen creature. Finally, when you cast a spell with a range of touch, your familiar can deliver the spell as if it had cast the spell. Your familiar must be within 100 feet of you, and it must use its reaction to deliver the spell when you cast it. If the spell requires an attack roll, you use your attack modifier for the roll.",
         "time": "1 hour"
     },
     "Find Steed": {
@@ -4140,7 +4202,7 @@
         "text": "You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it. If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.",
         "time": "1 minute"
     },
-    "Illusory Script": {
+    "Illusory Scrip (1)": {
         "classes": [
             "Rogue",
             "Warlock",
@@ -4159,7 +4221,29 @@
         "school": "Illusion",
         "source": "Player's Handbook",
         "source_page": 252,
-        "text": "You write on parchment, paper, or some other suitable writing material and imbue it with a potent illusion that lasts for the duration. To you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know. Should the spell be dispelled, the original script and the illusion both disappear. A creature with truesight can read the hidden message.",
+        "text": "You write on parchment, paper, or some other suitable writing material and imbue it with a potent illusion that lasts for the duration. To you and any creatures you designate when you cast the spell, the writing appears normal, written in your hand, and conveys whatever meaning you intended when you wrote the text. [...]",
+        "time": "1 minute"
+    },
+    "Illusory Script (2)": {
+        "classes": [
+            "Rogue",
+            "Warlock",
+            "Wizard",
+            "Bard"
+        ],
+        "components": [
+            "S",
+            "M"
+        ],
+        "duration": "10 days",
+        "level": 1,
+        "material": "a lead-based ink worth at least 10 gp, which the spell consumes",
+        "range": "Touch",
+        "ritual": true,
+        "school": "Illusion",
+        "source": "Player's Handbook",
+        "source_page": 252,
+        "text": "[...] To all others, the writing appears as if it were written in an unknown or magical script that is unintelligible. Alternatively, you can cause the writing to appear to be an entirely different message, written in a different hand and language, though the language must be one you know. Should the spell be dispelled, the original script and the illusion both disappear. A creature with truesight can read the hidden message.",
         "time": "1 minute"
     },
     "Imprisonment": {
@@ -4993,7 +5077,7 @@
         "text": "Until the spell ends, one willing creature you touch is immune to psychic damage, any effect that would sense its emotions or read its thoughts, divination spells, and the charmed condition. The spell even foils wish spells and spells or effects of similar power used to affect the target's mind or to gain information about the target.",
         "time": "1 action"
     },
-    "Minor Illusion": {
+    "Minor Illusion (1)": {
         "classes": [
             "Sorcerer",
             "Bard",
@@ -5014,7 +5098,31 @@
         "school": "Illusion",
         "source": "Player's Handbook",
         "source_page": 260,
-        "text": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends. If you create an image of an object - such as a chair, muddy footprints, or a small chest - it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it. If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.",
+        "text": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different [...]",
+        "time": "1 action"
+    },
+    "Minor Illusion (2)": {
+        "classes": [
+            "Sorcerer",
+            "Bard",
+            "Fighter",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "M"
+        ],
+        "duration": "1 minute",
+        "level": 0,
+        "material": "a bit of fleece",
+        "range": "30 feet",
+        "ritual": false,
+        "school": "Illusion",
+        "source": "Player's Handbook",
+        "source_page": 260,
+        "text": "[...] times before the spell ends. If you create an image of an object - such as a chair, muddy footprints, or a small chest - it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it. If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.",
         "time": "1 action"
     },
     "Mirage Arcane": {
@@ -5858,7 +5966,7 @@
         "text": "For the duration, the willing creature you touch has resistance to one damage type of your choice - acid, cold, fire, lightning, or thunder.",
         "time": "1 action"
     },
-    "Protection from Evil and Good": {
+    "Prot. from Evil and Good": {
         "classes": [
             "Paladin",
             "Fighter",
@@ -7098,7 +7206,7 @@
         "text": "When you cast this spell, you inscribe a harmful glyph either on a surface (such as a section of floor, a wall, or a table) or within an object that can be closed to conceal the glyph (such as a book, a scroll, or a treasure chest). If you choose a surface, the glyph can cover an area of the surface no larger than 10 feet in diameter. If you choose an object, that object must remain in its place, if the object is moved more than 10 feet from where you cast this spell, the glyph is broken, and the spell ends without being triggered. The glyph is nearly invisible, requiring an Intelligence (Investigation) check against your spell save DC to find it. You decide what triggers the glyph when you cast the spell. For glyphs inscribed on a surface, the most typical triggers include touching or stepping on the glyph, removing another object covering it, approaching within a certain distance of it, or manipulating the object that holds it. For glyphs inscribed within an object, the most common triggers are opening the object, approaching within a certain distance of it, or seeing or reading the glyph. You can further refine the trigger so the spell is activated only under certain circumstances or according to a creature's physical characteristics (such as height or weight), or physical kind (for example, the ward could be set to affect hags or shapechangers). You can also specify creatures that don't trigger the glyph, such as those who say a certain password. When you inscribe the glyph, choose one of the options below for its effect. Once triggered, the glyph glows, filling a 60-foot-radius sphere with dim light for 10 minutes, after which time the spell ends. Each creature in the sphere when the glyph activates is targeted by its effect, as is a creature that enters the sphere for the first time on a turn or ends its turn there. Death: Each target must make a Constitution saving throw, taking 10d10 necrotic damage on a failed save, or half as much damage on a successful save. Discord: Each target must make a Constitution saving throw. On a failed save, a target bickers and argues with other creatures for 1 minute. During this time, it is incapable of meaningful communication and has disadvantage on attack rolls and ability checks. Fear: Each target must make a Wisdom saving throw and becomes frightened for 1 minute on a failed save. While frightened, the target drops whatever it is holding and must move at least 30 feet away from the glyph on each of its turns, if able. Hopelessness: Each target must make a Charisma saving throw. On a failed save, the target is overwhelmed with despair for 1 minute. During this time, it can't attack or target any creature with harmful abilities, spells, or other magical effects. Insanity: Each target must make an Intelligence saving throw. On a failed save, the target is driven insane for 1 minute. An insane creature can't take actions, can't understand what other creatures say, can't read, and speaks only in gibberish. The DM controls its movement, which is erratic. Pain: Each target must make a Constitution saving throw and becomes incapacitated with excruciating pain for 1 minute on a failed save. Sleep: Each target must make a Wisdom saving throw and falls unconscious for 10 minutes on a failed save. A creature awakens if it takes damage or if someone uses an action to shake or slap it awake. Stunning: Each target must make a Wisdom saving throw and becomes stunned for 1 minute on a failed save.",
         "time": "1 minute"
     },
-    "Tasha's Hideous Laughter": {
+    "Risata Inc. di Tasha (1)": {
         "classes": [
             "Rogue",
             "Warlock",
@@ -7118,7 +7226,30 @@
         "school": "Enchantment",
         "source": "Player's Handbook",
         "source_page": 280,
-        "text": "A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laugher if this spell affects it. The target must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration. A creature with an Intelligence score of 4 or less isn't affected. At the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it's triggered by damage. On a success, the spell ends.",
+        "text": "A creature of your choice that you can see within range perceives everything as hilariously funny and falls into fits of laugher if this spell affects it. The target must succeed on a Wisdom saving throw or fall prone, becoming incapacitated and unable to stand up for the duration. A creature with an Intelligence score of 4 or less isn't affected. [...]",
+        "time": "1 action"
+    },
+    "Risata Inc. di Tasha (2)": {
+        "classes": [
+            "Rogue",
+            "Warlock",
+            "Wizard",
+            "Bard"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Concentration, up to 1 minute",
+        "level": 1,
+        "material": "tiny tarts and a feather that waved in the air",
+        "range": "30 feet",
+        "ritual": false,
+        "school": "Enchantment",
+        "source": "Player's Handbook",
+        "source_page": 280,
+        "text": "[...] At the end of each of its turns, and each time it takes damage, the target can make another Wisdom saving throw. The target has advantage on the saving throw if it's triggered by damage. On a success, the spell ends.",
         "time": "1 action"
     },
     "Telekinesis": {
@@ -7280,7 +7411,7 @@
         "text": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
         "time": "1 bonus action"
     },
-    "Thunderwave": {
+    "Thunderwave (1)": {
         "classes": [
             "Druid",
             "Sorcerer",
@@ -7301,7 +7432,31 @@
         "school": "Evocation",
         "source": "Player's Handbook",
         "source_page": 282,
-        "text": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+        "text": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. [...]",
+        "time": "1 action"
+    },
+    "Thunderwave (2)": {
+        "classes": [
+            "Druid",
+            "Sorcerer",
+            "Cleric",
+            "Bard",
+            "Fighter",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "Instantaneous",
+        "level": 1,
+        "material": null,
+        "range": "Self (15-foot cube)",
+        "ritual": false,
+        "school": "Evocation",
+        "source": "Player's Handbook",
+        "source_page": 282,
+        "text": "[...] In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
         "time": "1 action"
     },
     "Time Stop": {
