@@ -3535,7 +3535,7 @@
         "text": "You create a ward that protects up to 2,500 square feet of floor space (an area 50 feet square, or one hundred 5-foot squares or twenty-five 10-foot squares). The warded area can be up to 20 feet tall, and shaped as you desire. You can ward several stories of a stronghold by dividing the area among them, as long as you can walk into each contiguous area while you are casting the spell. When you cast this spell, you can specify individuals that are unaffected by any or all of the effects that you choose. You can also specify a password that, when spoken aloud, makes the speaker immune to these effects. Guards and wards creates the following effects within the warded area. Corridors: Fog fills all the warded corridors, making them heavily obscured. In addition, at each intersection or branching passage offering a choice of direction, there is a 50 percent chance that a creature other than you will believe it is going in the opposite direction from the one it chooses. Doors: All doors in the warded area are magically locked, as if sealed by an arcane lock spell. In addition, you can cover up to ten doors with an illusion (equivalent to the illusory object function of the minor illusion spell) to make them appear as plain sections of wall. Stairs: Webs fill all stairs in the warded area from top to bottom, as the web spell. These strands regrow in 10 minutes if they are burned or torn away while guards and wards lasts. Other Spell Effect: You can place your choice of one of the following magical effects within the warded area of the stronghold. \u00e2\u20ac\u00a2 Place dancing lights in four corridors. You can designate a simple program that the lights repeat as long as guards and wards lasts. \u00e2\u20ac\u00a2 Place magic mouth in two locations. \u00e2\u20ac\u00a2 Place stinking cloud in two locations. The vapors appear in the places you designate they return within 10 minutes if dispersed by wind while guards and wards lasts. \u00e2\u20ac\u00a2 Place a constant gust of wind in one corridor or room. Place a suggestion in one location. You select an area of up to 5 feet square, and any creature that enters or passes through the area receives the suggestion mentally. The whole warded area radiates magic. A dispel magic cast on a specific effect, if successful, removes only that effect. You can create a permanently guarded and warded structure by casting this spell there every day for one year.",
         "time": "10 minutes"
     },
-    "Guidance": {
+    "Guida": {
         "classes": [
             "Druid",
             "Cleric"
@@ -3544,16 +3544,16 @@
             "S",
             "V"
         ],
-        "duration": "Concentration, up to 1 minute",
+        "duration": "Concentrazione, fino a 1 minuto",
         "level": 0,
         "material": null,
         "range": "Touch",
         "ritual": false,
         "school": "Divination",
-        "source": "Player's Handbook",
-        "source_page": 248,
-        "text": "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends.",
-        "time": "1 action"
+        "source": "Guidance",
+        "source_page": 240,
+        "text": "L'incantatore tocca una creatura consenziente. Una volta prima che l'incantesimo termini, il bersaglio più tirare un d4 ed aggiungere il risultato ad una prova di caratteristica a sua scelta. Può tirare il dado prima o dopo aver effettuato la prova di caratteristica. Dopodiché l'incantesimo termina.",
+        "time": "1 azione"
     },
     "Guiding Bolt": {
         "classes": [
@@ -4343,16 +4343,16 @@
             "V",
             "M"
         ],
-        "duration": "1 hour",
+        "duration": "1 ora",
         "level": 0,
-        "material": "a firefly or phosphorescent moss",
+        "material": "una lucciola o del muschio fosforescente",
         "range": "Touch",
         "ritual": false,
         "school": "Evocation",
-        "source": "Player's Handbook",
-        "source_page": 255,
-        "text": "You touch one object that is no larger than 10 feet in any dimension. Until the spell ends, the object sheds bright light in a 20-foot radius and dim light for an additional 20 feet. The light can be colored as you like. Completely covering the object with something opaque blocks the light. The spell ends if you cast it again or dismiss it as an action. If you target an object held or worn by a hostile creature, that creature must succeed on a Dexterity saving throw to avoid the spell.",
-        "time": "1 action"
+        "source": "Light",
+        "source_page": 249,
+        "text": "L'incantatore tocca un oggetto non più grande di 3 metri in ogni dimensione. Finché l'incantesimo non termina, l'oggetto proietta luce intensa entro un raggio di 6m e luce fioca per altri 6m. La luce può essere del colore desiderato. L'incantesimo termina se l'incantatore lo lancia di nuovo o se lo interrompe con un'azione. Se il bersaglio è un oggetto impugnato o posseduto da una creatura ostile, quella creatura deve superare un tiro salvezza su Destrezza per evitare l'incantesimo.",
+        "time": "1 azione"
     },
     "Lightning Arrow": {
         "classes": [
@@ -6086,7 +6086,7 @@
         "text": "You touch a length of rope that is up to 60 feet long. One end of the rope then rises into the air until the whole rope hangs perpendicular to the ground. At the upper end of the rope, an invisible entrance opens to an extradimensional space that lasts until the spell ends. The extradimensional space can be reached by climbing to the top of the rope. The space can hold as many as eight Medium or smaller creatures. The rope can be pulled into the space, making the rope disappear from view outside the space. Attacks and spells can't cross through the entrance into or out of the extradimensional space, but those inside can see out of it as if through a 3-foot-by-5-foot window centered on the rope. Anything inside the extradimensional space drops out when the spell ends.",
         "time": "1 action"
     },
-    "Sacred Flame": {
+    "Fiamma Sacra": {
         "classes": [
             "Cleric"
         ],
@@ -6094,16 +6094,16 @@
             "S",
             "V"
         ],
-        "duration": "Instantaneous",
+        "duration": "Istantaneo",
         "level": 0,
         "material": null,
-        "range": "60 feet",
+        "range": "18m (60ft)",
         "ritual": false,
         "school": "Evocation",
-        "source": "Player's Handbook",
-        "source_page": 272,
-        "text": "Flame-like radiance descends on a creature that you can see within range. The target must succeed on a Dexterity saving throw or take 1d8 radiant damage. The target gains no benefit from cover for this saving throw. The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8).",
-        "time": "1 action"
+        "source": "Sacred Flame",
+        "source_page": 236,
+        "text": "Un bagliore simile a una fiamma scende fino a una creatura entro gittata e che l'incantatore sia in grado di vedere. Il besaglio deve superare un tiro salvezza su Destrezza, altrimenti subisce 1d8 danni radiosi. Il bersaglio non trae beneficio dalla copertura per questo tiro salvezza. I danni di questo incantesimo aumentano di 1d8 al 5° liv (2d8), 11° liv (3d8) e 17° liv (4d8).",
+        "time": "1 azione"
     },
     "Sanctuary": {
         "classes": [
