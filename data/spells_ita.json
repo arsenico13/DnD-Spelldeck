@@ -685,7 +685,7 @@
         "text": "You extend your hand and trace a sigil of warding in the air. Until the end of your next turn, you have resistance against bludgeoning, piercing, and slashing damage dealt by weapon attacks.",
         "time": "1 action"
     },
-    "Bless": {
+    "Benedizione": {
         "classes": [
             "Paladin",
             "Cleric"
@@ -695,16 +695,16 @@
             "V",
             "M"
         ],
-        "duration": "Concentration, up to 1 minute",
+        "duration": "Concentrazione, fino a 1 minuto",
         "level": 1,
         "material": "a sprinkling of holy water",
-        "range": "30 feet",
+        "range": "18m (30ft)",
         "ritual": false,
-        "school": "Enchantment",
-        "source": "Player's Handbook",
-        "source_page": 219,
-        "text": "You bless up to three creatures of your choice within range. Whenever a target makes an attack roll or a saving throw before the spell ends, the target can roll a d4 and add the number rolled to the attack roll or saving throw. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st.",
-        "time": "1 action"
+        "school": "Ammaliamento",
+        "source": "Bless",
+        "source_page": 217,
+        "text": "Benedici fino a tre creature a tua scelta entro gittata. Ogni volta che un bersaglio effettua un tiro per colpire o salvezza prima che l'incantesimo termini, può tirare 1d4 e aggiungere il risultato al tiro.",
+        "time": "1 azione"
     },
     "Blight": {
         "classes": [
@@ -1135,7 +1135,7 @@
         "text": "A dazzling array of flashing, colored light springs from your hand. Roll 6d10, the total is how many hit points of creatures this spell can effect. Creatures in a 15-foot cone originating from you are affected in ascending order of their current hit points (ignoring unconscious creatures and creatures that can't see). Starting with the creature that has the lowest current hit points, each creature affected by this spell is blinded until the spell ends. Subtract each creature's hit points from the total before moving on to the creature with the next lowest hit points. A creature's hit points must be equal to or less than the remaining total for the creature to be affected. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, roll an additional 2d10 for each slot level above 1st.",
         "time": "1 action"
     },
-    "Command": {
+    "Comando": {
         "classes": [
             "Paladin",
             "Warlock",
@@ -1147,12 +1147,12 @@
         "duration": "1 round",
         "level": 1,
         "material": null,
-        "range": "60 feet",
+        "range": "18m (60ft)",
         "ritual": false,
-        "school": "Enchantment",
-        "source": "Player's Handbook",
-        "source_page": 223,
-        "text": "You speak a one-word command to a creature you can see within range. The target must succeed on a Wisdom saving throw or follow the command on its next turn. The spell has no effect if the target is undead, if it doesn't understand your language, or if your command is directly harmful to it. Some typical commands and their effects follow. You might issue a command other than one described here. If you do so, the DM determines how the target behaves. If the target can't follow your command, the spell ends. Approach: The target moves toward you by the shortest and most direct route, ending its turn if it moves within 5 feet of you. Drop: The target drops whatever it is holding and then ends its turn. Flee: The target spends its turn moving away from you by the fastest available means. Grovel: The target falls prone and then ends its turn. Halt: The target doesn't move and takes no actions. A flying creature stays aloft, provided that it is able to do so. If it must move to stay aloft, it flies the minimum distance needed to remain in the air. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can affect one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
+        "school": "Ammaliamento",
+        "source": "Command",
+        "source_page": 222,
+        "text": "Pronuncia un comando di una parola a una creatura entro gittata che sei in grado di vedere. Il bersaglio deve superare un TS su Saggezza o obbedire al comando nel proprio turno successivo. Non ha effetto se il bersaglio è non-morto, non capisce la lingua o se il comando è dannoso in modo diretto.",
         "time": "1 action"
     },
     "Commune": {
@@ -1763,7 +1763,7 @@
         "text": "Holy power radiates from you in an aura with a 30-foot radius, awakening boldness in friendly creatures. Until the spell ends, the aura moves with you, centered on you. While in the aura, each non-hostile creature in the aura (including you) deals an extra 1d4 radiant damage when it hits with a weapon attack.",
         "time": "1 action"
     },
-    "Cure Wounds": {
+    "Cura Ferite": {
         "classes": [
             "Druid",
             "Paladin",
@@ -1780,11 +1780,11 @@
         "material": null,
         "range": "Touch",
         "ritual": false,
-        "school": "Evocation",
-        "source": "Player's Handbook",
-        "source_page": 230,
-        "text": "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
-        "time": "1 action"
+        "school": "Invocazione",
+        "source": "Cure Wounds",
+        "source_page": 228,
+        "text": "Una creatura che tocchi recupera un numero di punti ferita pari a 1d8+il tuo modificatore di caratteristica da incantatore.",
+        "time": "1 azione"
     },
     "Dancing Lights": {
         "classes": [
@@ -1980,7 +1980,7 @@
         "text": "For the duration, you know if there is an aberration, celestial, elemental, fey, fiend, or undead within 30 feet of you, as well as where the creature is located. Similarly, you know if there is a place of object within 30 feet of you that has been magically consecrated or desecrated. The spell can penetrate most barriers, but it is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
         "time": "1 action"
     },
-    "Detect Magic": {
+    "Individuazione del Magico": {
         "classes": [
             "Druid",
             "Paladin",
@@ -1994,15 +1994,15 @@
             "S",
             "V"
         ],
-        "duration": "Concentration, up to 10 minutes",
+        "duration": "Concentration, fino a 10 minuti",
         "level": 1,
         "material": null,
         "range": "Self",
         "ritual": true,
-        "school": "Divination",
-        "source": "Player's Handbook",
-        "source_page": 231,
-        "text": "For the duration, you sense the presence of magic within 30 feet of you. If you sense magic in this way, you can use your action to see a faint aura around any visible creature or object in the area that bears magic, and you learn its school of magic, if any. The spell can penetrate most barriers, but is blocked by 1 foot of stone, 1 inch of common metal, a thin sheet of lead, or 3 feet of wood or dirt.",
+        "school": "Divinazione",
+        "source": "Detect Magic",
+        "source_page": 244,
+        "text": "Per la durata dell'incantesimo, percepisci la presenza della magia entro 9m da te. Se percepisci la magia in questo modo, puoi usare la tua azione per vedere una debole aura attorno a ogni creatura o oggetto visibile nell'area e che contiene magia. Non vedi attraverso: 30cm di pietra; 2,5cm di metallo; 90cm di legno o terra; piombo.",
         "time": "1 action"
     },
     "Detect Poison and Disease": {
@@ -3723,7 +3723,7 @@
         "text": "Choose a creature that you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points. The spell also ends blindness, deafness, and any diseases affecting the target. This spell has no effect on constructs or undead. At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, the amount of healing increases by 10 for each slot level above 6th.",
         "time": "1 action"
     },
-    "Healing Word": {
+    "Parola Guaratrice": {
         "classes": [
             "Druid",
             "Cleric",
@@ -3735,12 +3735,12 @@
         "duration": "Instantaneous",
         "level": 1,
         "material": null,
-        "range": "60 feet",
+        "range": "18m (60ft)",
         "ritual": false,
-        "school": "Evocation",
-        "source": "Player's Handbook",
-        "source_page": 250,
-        "text": "A creature of your choice that you can see within range regains hit points equal to 1d4 + your spellcasting ability modifier. This spell has no effect on undead or constructs. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d4 for each slot level above 1st.",
+        "school": "Invocazione",
+        "source": "Healing Word",
+        "source_page": 259,
+        "text": "Una creatura a tua scelta entro gittata e che tu sia in grado di vedere recupera un ammontare di punti ferita pari a 1d4+il modificatore di caratteristica da incantatore.",
         "time": "1 bonus action"
     },
     "Heat Metal": {
@@ -4040,12 +4040,12 @@
         "duration": "Instantaneous",
         "level": 1,
         "material": "a pearl worth at least 100 gp and an owl feather",
-        "range": "Touch",
+        "range": "Contatto",
         "ritual": true,
         "school": "Divination",
-        "source": "Player's Handbook",
-        "source_page": 252,
-        "text": "You choose one object that you must touch throughout the casting of the spell. If it is a magic item or some other magic-imbued object, you learn its properties and how to use them, whether it requires attunement to use, and how many charges it has, if any. You learn whether any spells are affecting the item and what they are. If the item was created by a spell, you learn which spell created it. If you instead touch a creature throughout the casting, you learn what spells, if any, are currently affecting it.",
+        "source": "Identify",
+        "source_page": 240,
+        "text": "Scegli un oggetto che devi toccare quando lanci l'incantesimo. Se si tratta di un oggetto magico o infuso di magia, apprendi le sue proprietà e come usarlo. Scopri se ci sono eventuali incantesimi e quali sono. Se tocchi una creatura, apprendi quali incantesimi influenzano attualmente quella creatura.",
         "time": "1 minute"
     },
     "Illusory Script": {
@@ -4331,7 +4331,7 @@
         "text": "One creature or object of your choice that you can see within range rises vertically, up to 20 feet, and remains suspended there for the duration. The spell can levitate a target that weighs up to 500 pounds. An unwilling creature that succeeds on a Constitution saving throw is unaffected. The target can move only by pushing or pulling against a fixed object or surface within reach (such as a wall or a ceiling), which allows it to move as if it were climbing. You can change the target's altitude by up to 20 feet in either direction on your turn. If you are the target, you can move up or down as part of your move. Otherwise, you can use your action to move the target, which must remain within the spell's range. When the spell ends, the target floats gently to the ground if it is still aloft.",
         "time": "1 action"
     },
-    "Light": {
+    "Luce": {
         "classes": [
             "Fighter",
             "Sorcerer",
