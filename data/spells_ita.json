@@ -916,7 +916,7 @@
         "text": "You create a bolt of lightning that arcs toward a target of your choice that you can see within range. Three bolts then leap from that target to as many as three other targets, each of which must be within 30 feet of the first target. A target can be a creature or an object and can be targeted by only one of the bolts. A target must make a Dexterity saving throw. The target takes 10d8 lightning damage on a failed save, or half as much on a successful one. At Higher Levels: When you cast this spell using a spell slot of 7th level or higher, one additional bolt leaps from the first target to another target for each slot level above 6th.",
         "time": "1 action"
     },
-    "Charm Person": {
+    "Charme su persone": {
         "classes": [
             "Druid",
             "Sorcerer",
@@ -930,16 +930,16 @@
             "S",
             "V"
         ],
-        "duration": "1 hour",
+        "duration": "1 ore",
         "level": 1,
         "material": null,
-        "range": "30 feet",
+        "range": "9m (30ft)",
         "ritual": false,
-        "school": "Enchantment",
-        "source": "Player's Handbook",
+        "school": "Ammaliamento",
+        "source": "Charm Person",
         "source_page": 221,
-        "text": "You attempt to charm a humanoid you can see within range. It must make a Wisdom saving throw, and does so with advantage if you or your companions are fighting it. If it fails the saving throw, it is charmed by you until the spell ends or until you or your companions do anything harmful to it. The charmed creature regards you as a friendly acquaintance. When the spell ends, the creature knows it was charmed by you. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, you can target one additional creature for each slot level above 1st. The creatures must be within 30 feet of each other when you target them.",
-        "time": "1 action"
+        "text": "Tenti di affascinare un umanoide entro gittata che sei in grado di vedere. Il bersaglio deve effettuare un TS su Saggezza e dispone di vantaggio se tu o i tuoi compagni stanno combattendo contro di lui. Se lo fallisce, è affascinato da te finché l'incantesimo non termina o finché tu o i tuoi compagni non lo danneggiate in qualche modo. La creatura affascinata considera l'incantatore una figura conosciuta e amichevole. Quando l'incantesimo termina, la creatura capisce di essere stata affascinata da te. (ai livelli superiori aumentano le creature che puoi ammaliare)",
+        "time": "1 azione"
     },
     "Chill Touch": {
         "classes": [
@@ -2644,7 +2644,7 @@
         "text": "You convert raw materials into products of the same material. For example, you can fabricate a wooden bridge from a clump of trees, a rope from a patch of hemp, and clothes from flax or wool. Choose raw materials that you can see within range. You can fabricate a Large or smaller object (contained within a 10-foot cube, or eight connected 5-foot cubes), given a sufficient quantity of raw material. If you are working with metal, stone, or another mineral substance, however, the fabricated object can be no larger than Medium (contained within a single 5-foot cube). The quality of objects made by the spell is commensurate with the quality of the raw materials. Creatures or magic items can't be created or transmuted by this spell. You also can't use it to create items that ordinarily require a high degree of craftsmanship, such as jewelry, weapons, glass, or armor, unless you have proficiency with the type of artisan's tools used to craft such objects.",
         "time": "10 minutes"
     },
-    "Faerie Fire": {
+    "Luminescenza": {
         "classes": [
             "Druid",
             "Warlock",
@@ -2654,16 +2654,16 @@
         "components": [
             "V"
         ],
-        "duration": "Concentration, up to 1 minute",
+        "duration": "Concentrazione, fino a 1 minuto",
         "level": 1,
         "material": null,
         "range": "60 feet",
         "ritual": false,
-        "school": "Evocation",
-        "source": "Player's Handbook",
-        "source_page": 239,
-        "text": "Each object in a 20-foot cube within range is outlined in blue, green, or violet light (your choice). Any creature in the area when the spell is cast is also outlined in light if it fails a Dexterity saving throw. For the duration, objects and affected creatures shed dim light in a 10-foot radius. Any attack roll against an affected creature or object has advantage if the attacker can see it, and the affected creature or object can't benefit from being invisible.",
-        "time": "1 action"
+        "school": "Invocazione",
+        "source": "Faerie Fire",
+        "source_page": 249,
+        "text": "Ogni oggetto contenuto in un cubo con spigolo di 6m entro gittata viene evidenziato da un alone di luce blu/verde/viola (a tua scelta). Ogni creatura situata dentro l'area quando viene lanciato l'incantesimo viene a sua volta evidenziata dalla luce se fallisce un TS su Destrezza. Per la durata dell'incantesimo, gli oggetti e le creature influenzate proiettano luce fioca in un raggio di 3m. Ogni tiro per colpire contro oggetti o creature evidenziate dispongono di vantaggio se l'attaccante è in grado di vederli. La creatura o l'oggetto influenzato non trae beneficio dal fatto di essere invisibile.",
+        "time": "1 azione"
     },
     "False Life": {
         "classes": [
@@ -4901,7 +4901,7 @@
         "text": "Until the spell ends, one willing creature you touch is immune to psychic damage, any effect that would sense its emotions or read its thoughts, divination spells, and the charmed condition. The spell even foils wish spells and spells or effects of similar power used to affect the target's mind or to gain information about the target.",
         "time": "1 action"
     },
-    "Minor Illusion": {
+    "Illusione Minore (1)": {
         "classes": [
             "Sorcerer",
             "Bard",
@@ -4914,16 +4914,40 @@
             "S",
             "M"
         ],
-        "duration": "1 minute",
+        "duration": "1 minuto",
         "level": 0,
-        "material": "a bit of fleece",
-        "range": "30 feet",
+        "material": "ciuffo di lana",
+        "range": "9m (30ft)",
         "ritual": false,
-        "school": "Illusion",
-        "source": "Player's Handbook",
-        "source_page": 260,
-        "text": "You create a sound or an image of an object within range that lasts for the duration. The illusion also ends if you dismiss it as an action or cast this spell again. If you create a sound, its volume can range from a whisper to a scream. It can be your voice, someone else's voice, a lion's roar, a beating of drums, or any other sound you choose. The sound continues unabated throughout the duration, or you can make discrete sounds at different times before the spell ends. If you create an image of an object - such as a chair, muddy footprints, or a small chest - it must be no larger than a 5-foot cube. The image can't create sound, light, smell, or any other sensory effect. Physical interaction with the image reveals it to be an illusion, because things can pass through it. If a creature uses its action to examine the sound or image, the creature can determine that it is an illusion with a successful Intelligence (Investigation) check against your spell save DC. If a creature discerns the illusion for what it is, the illusion becomes faint to the creature.",
-        "time": "1 action"
+        "school": "Illusione",
+        "source": "Minor Illusion",
+        "source_page": 242,
+        "text": "Crei un suono o un'immagine di un oggetto entro gittata che permane per la durata dell'incantesimo. L'illusione termina anche se la interrompi con un'azione o lanci di nuovo questa magia. Se crei un suono, il suo volume può variare da un sussurro ad un urlo. Può trattarsi della tua voce o di un'altra persona, di un ruggito, di un rullo di tamburi o qualsiasi suono a tua scelta. Il suono può echeggiare ininterrottamente per tutta la durata oppure puoi emettere suoni più discreti in momenti diversi prima che l'incantesimo termini.",
+        "time": "1 azione"
+    },
+    "Illusione Minore (2)": {
+        "classes": [
+            "Sorcerer",
+            "Bard",
+            "Fighter",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "M"
+        ],
+        "duration": "1 minuto",
+        "level": 0,
+        "material": null,
+        "range": "9m (30ft)",
+        "ritual": false,
+        "school": "Illusione",
+        "source": "Minor Illusion",
+        "source_page": 242,
+        "text": "Se crei l'immagine di un oggetto (es: sedia, impronte nel fango, scrigno), l'oggetto non deve essere più grande di un cubo con spigoli di 1,5m. L'immagine non può emettere suoni, luci, odori o qualsiasi altro effetto sensoriale. Un'interazione fisica con l'immagine rivela l'illusione in quanto altri oggetti la attraversano. Una creatura può usare un'azione per determinare se si tratta di un'illusione.",
+        "time": "1 azione"
     },
     "Mirage Arcane": {
         "classes": [
@@ -7117,7 +7141,7 @@
         "text": "The first time you hit with a melee weapon attack during this spell's duration, your weapon rings with thunder that is audible within 300 feet of you, and the attack deals an extra 2d6 thunder damage to the target. Additionally, if the target is a creature, it must succeed on a Strength saving throw or be pushed 10 feet away from you and knocked prone.",
         "time": "1 bonus action"
     },
-    "Thunderwave": {
+    "Onda tonante": {
         "classes": [
             "Druid",
             "Sorcerer",
@@ -7130,15 +7154,15 @@
             "S",
             "V"
         ],
-        "duration": "Instantaneous",
+        "duration": "Istantaneo",
         "level": 1,
         "material": null,
-        "range": "Self (15-foot cube)",
+        "range": "Self (cubo 4,5m)",
         "ritual": false,
-        "school": "Evocation",
-        "source": "Player's Handbook",
-        "source_page": 282,
-        "text": "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a Constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed. In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+        "school": "Invocazione",
+        "source": "Thunderwave",
+        "source_page": 257,
+        "text": "Un'ondata di energia tonante di propaga da te. Ogni creatura entro un cubo con spigolo da 4,5m originato da te deve effettuare un TS su Costituzione. Se lo fallisce, subisce 2d8 danni da tuono e viene spinta di 3m più lontana da te. Inoltre, gli oggi non fissati situati all'interno dell'area vengono automaticamente spinti 3m più lontano. L'incantesimo emette un rombo tonante udibile fino a 90m di distanza. (ai livelli superiori aumentano i danni)",
         "time": "1 action"
     },
     "Time Stop": {
@@ -7389,9 +7413,9 @@
         "range": "60 feet",
         "ritual": false,
         "school": "Enchantment",
-        "source": "Player's Handbook",
+        "source": "Vicious Mockery",
         "source_page": 285,
-        "text": "L'incantatore pronuncia una sequenza di insulti mescolati a sottili ammaliamenti contro una creatura entro gittata e che egli sia in grado di vedere. Se il bersaglio è in grado di sentirlo (non è necessario che lo capisca), deve superare un tiro salvezza su Saggezza, altrimenti subisce 1d4 danni psichici e svantaggio al tiro per colpire successivo che effettua prima della fine del suo turno successivo. I danni di questo incantesimo aumentano di 1d4 quando l'incantatore arriva al 5° livello (2d4), 11° livello (3d4) e i 17° livello (4d4).",
+        "text": "Pronunci una sequenza di insulti mescolati a sottili ammaliamenti contro una creatura entro gittata e che sei in grado di vedere. Se il bersaglio è in grado di sentirti (non è necessario che capisca), deve superare un tiro salvezza su Saggezza, altrimenti subisce 1d4 danni psichici e svantaggio al tiro per colpire successivo che effettua prima della fine del suo turno successivo. I danni di questo incantesimo aumentano di 1d4 quando arrivi al 5° liv (2d4), 11° liv (3d4) e i 17° liv (4d4).",
         "time": "1 action"
     },
     "Wall of Fire": {
