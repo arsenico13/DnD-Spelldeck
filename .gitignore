@@ -180,4 +180,5 @@ TSWLatexianTemp*
 
 # DnD-Spelldeck
 spells.tex
+tex/items.tex
 __pycache__/
