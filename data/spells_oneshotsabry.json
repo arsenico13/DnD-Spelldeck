@@ -1,0 +1,309 @@
+{
+    "Beffa crudele": {
+        "classes": [
+            "Bard"
+        ],
+        "components": [
+            "V"
+        ],
+        "duration": "Instantaneous",
+        "level": 0,
+        "material": null,
+        "range": "60 feet",
+        "ritual": false,
+        "school": "Enchantment",
+        "source": "Vicious Mockery",
+        "source_page": 285,
+        "text": "Pronunci una sequenza di insulti mescolati a sottili ammaliamenti contro una creatura entro gittata e che sei in grado di vedere. Se il bersaglio è in grado di sentirti (non è necessario che capisca), deve superare un tiro salvezza su Saggezza, altrimenti subisce 1d4 danni psichici e svantaggio al tiro per colpire successivo che effettua prima della fine del suo turno successivo. I danni di questo incantesimo aumentano di 1d4 quando arrivi al 5° liv (2d4), 11° liv (3d4) e i 17° liv (4d4).",
+        "time": "1 action"
+    },
+    "Benedizione": {
+        "classes": [
+            "Paladin",
+            "Cleric"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Concentrazione, fino a 1 minuto",
+        "level": 1,
+        "material": "a sprinkling of holy water",
+        "range": "18m (30ft)",
+        "ritual": false,
+        "school": "Ammaliamento",
+        "source": "Bless",
+        "source_page": 217,
+        "text": "Benedici fino a tre creature a tua scelta entro gittata. Ogni volta che un bersaglio effettua un tiro per colpire o salvezza prima che l'incantesimo termini, può tirare 1d4 e aggiungere il risultato al tiro.",
+        "time": "1 azione"
+    },
+    "Charme su persone": {
+        "classes": [
+            "Druid",
+            "Sorcerer",
+            "Cleric",
+            "Bard",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "1 ore",
+        "level": 1,
+        "material": null,
+        "range": "9m (30ft)",
+        "ritual": false,
+        "school": "Ammaliamento",
+        "source": "Charm Person",
+        "source_page": 221,
+        "text": "Tenti di affascinare un umanoide entro gittata che sei in grado di vedere. Il bersaglio deve effettuare un TS su Saggezza e dispone di vantaggio se tu o i tuoi compagni stanno combattendo contro di lui. Se lo fallisce, è affascinato da te finché l'incantesimo non termina o finché tu o i tuoi compagni non lo danneggiate in qualche modo. La creatura affascinata considera l'incantatore una figura conosciuta e amichevole. Quando l'incantesimo termina, la creatura capisce di essere stata affascinata da te. (ai livelli superiori aumentano le creature che puoi ammaliare)",
+        "time": "1 azione"
+    },
+    "Comando": {
+        "classes": [
+            "Paladin",
+            "Warlock",
+            "Cleric"
+        ],
+        "components": [
+            "V"
+        ],
+        "duration": "1 round",
+        "level": 1,
+        "material": null,
+        "range": "18m (60ft)",
+        "ritual": false,
+        "school": "Ammaliamento",
+        "source": "Command",
+        "source_page": 222,
+        "text": "Pronuncia un comando di una parola a una creatura entro gittata che sei in grado di vedere. Il bersaglio deve superare un TS su Saggezza o obbedire al comando nel proprio turno successivo. Non ha effetto se il bersaglio è non-morto, non capisce la lingua o se il comando è dannoso in modo diretto.",
+        "time": "1 action"
+    },
+    "Cura Ferite": {
+        "classes": [
+            "Druid",
+            "Paladin",
+            "Ranger",
+            "Cleric",
+            "Bard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "Instantaneous",
+        "level": 1,
+        "material": null,
+        "range": "Touch",
+        "ritual": false,
+        "school": "Invocazione",
+        "source": "Cure Wounds",
+        "source_page": 228,
+        "text": "Una creatura che tocchi recupera un numero di punti ferita pari a 1d8+il tuo modificatore di caratteristica da incantatore.",
+        "time": "1 azione"
+    },
+    "Fiamma Sacra": {
+        "classes": [
+            "Cleric"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "Istantaneo",
+        "level": 0,
+        "material": null,
+        "range": "18m (60ft)",
+        "ritual": false,
+        "school": "Evocation",
+        "source": "Sacred Flame",
+        "source_page": 236,
+        "text": "Un bagliore simile a una fiamma scende fino a una creatura entro gittata e che l'incantatore sia in grado di vedere. Il besaglio deve superare un tiro salvezza su Destrezza, altrimenti subisce 1d8 danni radiosi. Il bersaglio non trae beneficio dalla copertura per questo tiro salvezza. I danni di questo incantesimo aumentano di 1d8 al 5° liv (2d8), 11° liv (3d8) e 17° liv (4d8).",
+        "time": "1 azione"
+    },
+    "Guida": {
+        "classes": [
+            "Druid",
+            "Cleric"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "Concentrazione, fino a 1 minuto",
+        "level": 0,
+        "material": null,
+        "range": "Touch",
+        "ritual": false,
+        "school": "Divination",
+        "source": "Guidance",
+        "source_page": 240,
+        "text": "L'incantatore tocca una creatura consenziente. Una volta prima che l'incantesimo termini, il bersaglio più tirare un d4 ed aggiungere il risultato ad una prova di caratteristica a sua scelta. Può tirare il dado prima o dopo aver effettuato la prova di caratteristica. Dopodiché l'incantesimo termina.",
+        "time": "1 azione"
+    },
+    "Luce": {
+        "classes": [
+            "Fighter",
+            "Sorcerer",
+            "Cleric",
+            "Wizard",
+            "Bard"
+        ],
+        "components": [
+            "V",
+            "M"
+        ],
+        "duration": "1 ora",
+        "level": 0,
+        "material": "una lucciola o del muschio fosforescente",
+        "range": "Touch",
+        "ritual": false,
+        "school": "Evocation",
+        "source": "Light",
+        "source_page": 249,
+        "text": "L'incantatore tocca un oggetto non più grande di 3 metri in ogni dimensione. Finché l'incantesimo non termina, l'oggetto proietta luce intensa entro un raggio di 6m e luce fioca per altri 6m. La luce può essere del colore desiderato. L'incantesimo termina se l'incantatore lo lancia di nuovo o se lo interrompe con un'azione. Se il bersaglio è un oggetto impugnato o posseduto da una creatura ostile, quella creatura deve superare un tiro salvezza su Destrezza per evitare l'incantesimo.",
+        "time": "1 azione"
+    },
+    "Illusione Minore (1)": {
+        "classes": [
+            "Sorcerer",
+            "Bard",
+            "Fighter",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "M"
+        ],
+        "duration": "1 minuto",
+        "level": 0,
+        "material": "ciuffo di lana",
+        "range": "9m (30ft)",
+        "ritual": false,
+        "school": "Illusione",
+        "source": "Minor Illusion",
+        "source_page": 242,
+        "text": "Crei un suono o un'immagine di un oggetto entro gittata che permane per la durata dell'incantesimo. L'illusione termina anche se la interrompi con un'azione o lanci di nuovo questa magia. Se crei un suono, il suo volume può variare da un sussurro ad un urlo. Può trattarsi della tua voce o di un'altra persona, di un ruggito, di un rullo di tamburi o qualsiasi suono a tua scelta. Il suono può echeggiare ininterrottamente per tutta la durata oppure puoi emettere suoni più discreti in momenti diversi prima che l'incantesimo termini.",
+        "time": "1 azione"
+    },
+    "Illusione Minore (2)": {
+        "classes": [
+            "Sorcerer",
+            "Bard",
+            "Fighter",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "M"
+        ],
+        "duration": "1 minuto",
+        "level": 0,
+        "material": null,
+        "range": "9m (30ft)",
+        "ritual": false,
+        "school": "Illusione",
+        "source": "Minor Illusion",
+        "source_page": 242,
+        "text": "Se crei l'immagine di un oggetto (es: sedia, impronte nel fango, scrigno), l'oggetto non deve essere più grande di un cubo con spigoli di 1,5m. L'immagine non può emettere suoni, luci, odori o qualsiasi altro effetto sensoriale. Un'interazione fisica con l'immagine rivela l'illusione in quanto altri oggetti la attraversano. Una creatura può usare un'azione per determinare se si tratta di un'illusione.",
+        "time": "1 azione"
+    },
+    "Individuazione del Magico": {
+        "classes": [
+            "Druid",
+            "Paladin",
+            "Sorcerer",
+            "Cleric",
+            "Bard",
+            "Ranger",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "Concentration, fino a 10 minuti",
+        "level": 1,
+        "material": null,
+        "range": "Self",
+        "ritual": true,
+        "school": "Divinazione",
+        "source": "Detect Magic",
+        "source_page": 244,
+        "text": "Per la durata dell'incantesimo, percepisci la presenza della magia entro 9m da te. Se percepisci la magia in questo modo, puoi usare la tua azione per vedere una debole aura attorno a ogni creatura o oggetto visibile nell'area e che contiene magia. Non vedi attraverso: 30cm di pietra; 2,5cm di metallo; 90cm di legno o terra; piombo.",
+        "time": "1 action"
+    },
+    "Luminescenza": {
+        "classes": [
+            "Druid",
+            "Warlock",
+            "Cleric",
+            "Bard"
+        ],
+        "components": [
+            "V"
+        ],
+        "duration": "Concentrazione, fino a 1 minuto",
+        "level": 1,
+        "material": null,
+        "range": "60 feet",
+        "ritual": false,
+        "school": "Invocazione",
+        "source": "Faerie Fire",
+        "source_page": 249,
+        "text": "Ogni oggetto contenuto in un cubo con spigolo di 6m entro gittata viene evidenziato da un alone di luce blu/verde/viola (a tua scelta). Ogni creatura situata dentro l'area quando viene lanciato l'incantesimo viene a sua volta evidenziata dalla luce se fallisce un TS su Destrezza. Per la durata dell'incantesimo, gli oggetti e le creature influenzate proiettano luce fioca in un raggio di 3m. Ogni tiro per colpire contro oggetti o creature evidenziate dispongono di vantaggio se l'attaccante è in grado di vederli. La creatura o l'oggetto influenzato non trae beneficio dal fatto di essere invisibile.",
+        "time": "1 azione"
+    },
+    "Onda tonante": {
+        "classes": [
+            "Druid",
+            "Sorcerer",
+            "Cleric",
+            "Bard",
+            "Fighter",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "Istantaneo",
+        "level": 1,
+        "material": null,
+        "range": "Self (cubo 4,5m)",
+        "ritual": false,
+        "school": "Invocazione",
+        "source": "Thunderwave",
+        "source_page": 257,
+        "text": "Un'ondata di energia tonante di propaga da te. Ogni creatura entro un cubo con spigolo da 4,5m originato da te deve effettuare un TS su Costituzione. Se lo fallisce, subisce 2d8 danni da tuono e viene spinta di 3m più lontana da te. Inoltre, gli oggi non fissati situati all'interno dell'area vengono automaticamente spinti 3m più lontano. L'incantesimo emette un rombo tonante udibile fino a 90m di distanza. (ai livelli superiori aumentano i danni)",
+        "time": "1 action"
+    },
+    "Parola Guaratrice": {
+        "classes": [
+            "Druid",
+            "Cleric",
+            "Bard"
+        ],
+        "components": [
+            "V"
+        ],
+        "duration": "Instantaneous",
+        "level": 1,
+        "material": null,
+        "range": "18m (60ft)",
+        "ritual": false,
+        "school": "Invocazione",
+        "source": "Healing Word",
+        "source_page": 259,
+        "text": "Una creatura a tua scelta entro gittata e che tu sia in grado di vedere recupera un ammontare di punti ferita pari a 1d4+il modificatore di caratteristica da incantatore.",
+        "time": "1 bonus action"
+    }
+}
