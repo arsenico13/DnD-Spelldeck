@@ -41,8 +41,9 @@ def truncate_string(string, max_len=MAX_TEXT_LENGTH):
     return rv
 
 
-def print_item(name, level, school, range, time, ritual, duration, components,
+def print_item(name, level, school, weight, cost, ritual, damage, components,
                 material, text, source=None, source_page=None, **kwargs):
+
     global ITEMS_TRUNCATED, ITEMS_TOTAL
     header = LEVEL_STRING[level].format(
         school=school.lower(), ritual='ritual' if ritual else '').strip()
@@ -59,7 +60,7 @@ def print_item(name, level, school, range, time, ritual, duration, components,
     ITEMS_TOTAL += 1
 
     print("\\begin{spell}{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
-        (name, header, range, time, duration, ", ".join(components), source or '', textwrap.fill(new_text, 80)))
+        (name, header, weight, cost, damage, ", ".join(components), source or '', textwrap.fill(new_text, 80)))
 
 
 def get_spells(classes=None, levels=None, schools=None, names=None):
@@ -127,5 +128,6 @@ if __name__ == '__main__':
         print_item(name, **spell)
 
     print('Ho dovuto troncare il testo di %d su %d items a %d caratteri.' % (ITEMS_TRUNCATED, ITEMS_TOTAL, MAX_TEXT_LENGTH), file=sys.stderr)
+
     if ITEMS_TRUNCATED:
         print(f"I nomi degli oggetti che sono stati troncati sono: {ITEMS_TRUNCATED_NAMES}")
