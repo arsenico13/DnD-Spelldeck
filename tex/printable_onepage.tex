@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[a4paper,inner=1in]{geometry}
+\usepackage{pdfpages}
+
+\begin{document}
+
+\newcount\pdfpagescount
+\pdfpagescount=\XeTeXpdfpagecount "items_cards.pdf"
+
+\ifnum\pdfpagescount=1
+  % Ripete la pagina 1 nove volte
+  \includepdf[
+    pages={1,1,1,1,1,1,1,1,1},
+    nup=3x3,
+    noautoscale=true,
+    frame=true
+  ]{items_cards.pdf}
+\else
+  % Impagina tutte le pagine in griglie 3x3, come al solito
+  \includepdf[
+    pages=-,
+    nup=3x3,
+    noautoscale=true,
+    frame=true
+  ]{items_cards.pdf}
+\fi
+
+\end{document}
