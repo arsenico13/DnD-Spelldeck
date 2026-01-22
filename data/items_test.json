@@ -3,15 +3,13 @@
         "classes": [
             "Bard"
         ],
-        "attunement": [
-            "V"
-        ],
-        "damage": "Instantaneous",
+        "attunement": false,
+        "damage": "-",
         "availability": "non comune",
         "material": null,
         "weight": "20g",
         "ritual": false,
-        "itemtype": "Enchantment",
+        "itemtype": "Pozione",
         "source": "Vicious Mockery",
         "source_page": 285,
         "text": "You regain 2d4 + 2 hit points when you drink this potion. The potion's red liquid glimmers when agitated.",
@@ -22,17 +20,13 @@
             "Paladin",
             "Cleric"
         ],
-        "attunement": [
-            "S",
-            "V",
-            "M"
-        ],
-        "damage": "Concentrazione, fino a 1 minuto",
+        "attunement": false,
+        "damage": "-",
         "availability": "raro",
         "material": "a sprinkling of holy water",
         "weight": "15Kg",
         "ritual": false,
-        "itemtype": "Ammaliamento",
+        "itemtype": "Pozione",
         "source": "Bless",
         "source_page": 217,
         "text": "You regain 4d4 + 4 hit points when you drink this potion. The potion's red liquid glimmers when agitated.",
@@ -48,16 +42,13 @@
             "Rogue",
             "Wizard"
         ],
-        "attunement": [
-            "S",
-            "V"
-        ],
-        "damage": "durat",
+        "attunement": false,
+        "damage": "3d8",
         "availability": "dubbio",
         "material": null,
         "weight": "pesone",
         "ritual": false,
-        "itemtype": "scuola",
+        "itemtype": "Variante (armatura)",
         "source": "sorgente",
         "source_page": 221,
         "text": "You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below.",
@@ -73,16 +64,13 @@
             "Rogue",
             "Wizard"
         ],
-        "attunement": [
-            "S",
-            "V"
-        ],
-        "damage": "durat",
+        "attunement": false,
+        "damage": "-",
         "availability": "leggendario",
         "material": null,
         "weight": "peso",
         "ritual": true,
-        "itemtype": "scuola",
+        "itemtype": "Sbadabam!",
         "source": "sorgente",
         "source_page": 221,
         "text": "You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You ha",

@@ -62,7 +62,7 @@ def print_item(name, availability, itemtype, weight, cost, ritual, damage, attun
     ITEMS_TOTAL += 1
 
     print("\\begin{spell}{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
-        (name, header, weight, cost, damage, 'si' if attunement or 'no', source or '', textwrap.fill(new_text, 80)))
+        (name, header, weight, cost, damage, 'si' if attunement else 'no', source or '', textwrap.fill(new_text, 80)))
 
 
 def get_spells(classes=None, levels=None, schools=None, names=None):
