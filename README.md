@@ -105,6 +105,8 @@ E successivamente eseguire la compilazione con:
     latexmk -f xelatex -cd tex/items_cards.tex tex/printable_items.tex
 
 
+La struttura base dei dati per le carte oggetto è in "items_test.json".
+
 
 ## comandi utili
 
