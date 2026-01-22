@@ -3,7 +3,7 @@
         "classes": [
             "Bard"
         ],
-        "components": [
+        "attunement": [
             "V"
         ],
         "damage": "Instantaneous",
@@ -22,7 +22,7 @@
             "Paladin",
             "Cleric"
         ],
-        "components": [
+        "attunement": [
             "S",
             "V",
             "M"
@@ -48,7 +48,7 @@
             "Rogue",
             "Wizard"
         ],
-        "components": [
+        "attunement": [
             "S",
             "V"
         ],
@@ -73,7 +73,7 @@
             "Rogue",
             "Wizard"
         ],
-        "components": [
+        "attunement": [
             "S",
             "V"
         ],
@@ -81,7 +81,7 @@
         "level": 1,
         "material": null,
         "weight": "peso",
-        "ritual": false,
+        "ritual": true,
         "school": "scuola",
         "source": "sorgente",
         "source_page": 221,
