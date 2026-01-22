@@ -42,16 +42,13 @@ def truncate_string(string, max_len=MAX_TEXT_LENGTH):
 
 
 def print_item(name, availability, itemtype, weight, cost, ritual, damage, attunement,
-                material, text, source=None, source_page=None, **kwargs):
+                material, text, damagetype=None, **kwargs):
 
     global ITEMS_TRUNCATED, ITEMS_TOTAL
 
     # deve essere composto da tipo di oggetto + disponibilità dell'oggetto
     header = "" + itemtype + " - " + availability
     # header = LEVEL_STRING[level].format(school=school.lower(), ritual='ritual' if ritual else '').strip()
-
-    if source_page is not None:
-        source += ' pag %d' % source_page
 
     new_text = truncate_string(text)
 
@@ -62,7 +59,7 @@ def print_item(name, availability, itemtype, weight, cost, ritual, damage, attun
     ITEMS_TOTAL += 1
 
     print("\\begin{spell}{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
-        (name, header, weight, cost, damage, 'si' if attunement else 'no', source or '', textwrap.fill(new_text, 80)))
+        (name, header, damagetype, cost, damage, 'si' if attunement else 'no', weight, textwrap.fill(new_text, 80)))
 
 
 def get_spells(classes=None, levels=None, schools=None, names=None):

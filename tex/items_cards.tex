@@ -20,7 +20,7 @@
 \setlength{\headsep}{3mm}
 \pagestyle{fancy}
 \chead{\scshape\scriptsize\spellheader\\[-1.8mm]\Large\color{headercolor}\mbox{\spelltitle}}
-\cfoot{\if\relax\spellsource\relax\else\scriptsize\spellsource\fi}
+\cfoot{\if\relax\damagetype\relax\else\scriptsize\damagetype\fi}
 \setlength{\parindent}{0pt}
 
 \newenvironment{spell}[7]{
@@ -30,7 +30,7 @@
     \def\itemcost{#4}
     \def\damage{#5}
     \def\attunement{#6}
-    \def\spellsource{#7}
+    \def\damagetype{#7}
     \begin{minipage}[t][5cm][t]{\textwidth}
     \vspace{-3mm}
     \begin{minipage}[t]{0.49\textwidth}
