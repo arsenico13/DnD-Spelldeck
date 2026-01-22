@@ -70,3 +70,29 @@ sorts of graphical resources available.
 
 If I fucked up here (I don't speak legalese) please contact me before sending a
 team of angry lawyers and/or highly trained assassin-monkeys.
+
+
+---
+
+
+# JACK
+
+## Carte Magia
+
+Tutte le info precedenti in questo README sono ancora vere ma in aggiunta ho messo anche un parametro aggiuntivo, `-f`, che
+può essere utilizzato per specificare quale file json utilizzare nella creazione delle carte. Esempio:
+
+    python3 generate.py -f "data/spells_ita.json" > tex/spells.tex
+
+
+In questo modo possiamo generare le carte magia con testi personalizzati o tradotti. Molto easy.
+
+
+## Carte Oggetto
+
+Ho creato un nuovo file, `items.tex`, totalmente basato sull'originale `cards.tex`. Mi voglio basare su quello per andare
+a generare le carte per gli oggetti (che le ritengo una cosa diversa dalle carte Arma, imho).
+
+
+
+---
