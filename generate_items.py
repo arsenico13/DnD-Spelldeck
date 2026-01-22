@@ -130,4 +130,4 @@ if __name__ == '__main__':
     print('Ho dovuto troncare il testo di %d su %d items a %d caratteri.' % (ITEMS_TRUNCATED, ITEMS_TOTAL, MAX_TEXT_LENGTH), file=sys.stderr)
 
     if ITEMS_TRUNCATED:
-        print(f"I nomi degli oggetti che sono stati troncati sono: {ITEMS_TRUNCATED_NAMES}")
+        print(f"I nomi degli oggetti che sono stati troncati sono: {ITEMS_TRUNCATED_NAMES}", file=sys.stderr)
