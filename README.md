@@ -94,6 +94,18 @@ Ho creato un nuovo file, `items.tex`, totalmente basato sull'originale `cards.te
 a generare le carte per gli oggetti (che le ritengo una cosa diversa dalle carte Arma, imho).
 
 
+Per generare il file `items.tex` da usare come sorgente dei dati, eseguire:
+
+    python3 generate_items.py -f "..." > tex/items.tex
+
+
+E successivamente eseguire la compilazione con:
+
+
+    latexmk -f xelatex -cd tex/items_cards.tex tex/printable_items.tex
+
+
+
 ## comandi utili
 
 

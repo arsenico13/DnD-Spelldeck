@@ -1,0 +1,66 @@
+{
+    "Pozione di Cura": {
+        "classes": [
+            "Bard"
+        ],
+        "components": [
+            "V"
+        ],
+        "duration": "Instantaneous",
+        "level": 0,
+        "material": null,
+        "range": "60 feet",
+        "ritual": false,
+        "school": "Enchantment",
+        "source": "Vicious Mockery",
+        "source_page": 285,
+        "text": "You regain 2d4 + 2 hit points when you drink this potion. The potion's red liquid glimmers when agitated.",
+        "time": "1 action"
+    },
+    "Pozione di cura maggiore": {
+        "classes": [
+            "Paladin",
+            "Cleric"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Concentrazione, fino a 1 minuto",
+        "level": 1,
+        "material": "a sprinkling of holy water",
+        "range": "18m (30ft)",
+        "ritual": false,
+        "school": "Ammaliamento",
+        "source": "Bless",
+        "source_page": 217,
+        "text": "You regain 4d4 + 4 hit points when you drink this potion. The potion's red liquid glimmers when agitated.",
+        "time": "1 azione"
+    },
+    "Armor of Resistance": {
+        "classes": [
+            "Druid",
+            "Sorcerer",
+            "Cleric",
+            "Bard",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "durat",
+        "level": 1,
+        "material": null,
+        "range": "dist",
+        "ritual": false,
+        "school": "scuola",
+        "source": "sorgente",
+        "source_page": 221,
+        "text": "You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below.",
+        "time": "1 azione"
+    }
+}
