@@ -41,13 +41,13 @@ def truncate_string(string, max_len=MAX_TEXT_LENGTH):
     return rv
 
 
-def print_item(name, level, school, weight, cost, ritual, damage, attunement,
+def print_item(name, availability, itemtype, weight, cost, ritual, damage, attunement,
                 material, text, source=None, source_page=None, **kwargs):
 
     global ITEMS_TRUNCATED, ITEMS_TOTAL
 
     # deve essere composto da tipo di oggetto + disponibilità dell'oggetto
-    header = "" +
+    header = "" + itemtype + " - " + availability
     # header = LEVEL_STRING[level].format(school=school.lower(), ritual='ritual' if ritual else '').strip()
 
     if source_page is not None:
