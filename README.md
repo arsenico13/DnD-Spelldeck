@@ -108,6 +108,13 @@ E successivamente eseguire la compilazione con:
 La struttura base dei dati per le carte oggetto è in "items_test.json".
 
 
+### Stampare 9 volte lo stesso oggetto
+
+Nel caso si voglia ripetere 9 volte lo stesso oggetto, per esempio con una pozione di cura, si può fare:
+
+    latexmk -f xelatex -cd tex/pozioni_di_cura.tex tex/printable_onepage.tex
+
+
 ## comandi utili
 
 
