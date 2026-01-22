@@ -94,5 +94,12 @@ Ho creato un nuovo file, `items.tex`, totalmente basato sull'originale `cards.te
 a generare le carte per gli oggetti (che le ritengo una cosa diversa dalle carte Arma, imho).
 
 
+## comandi utili
+
+
+Pulizia della cache/file temporanei:
+
+rm -f tex/*.aux tex/*.log tex/*.xdv tex/*.out tex/*.pdf tex/*.fls tex/*.fdb_latexmk
+
 
 ---
