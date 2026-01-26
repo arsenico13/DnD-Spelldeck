@@ -1,5 +1,4 @@
 {
-    "_comment": "Singolo oggetto con Pozione di Cura Minore, da usare per generare una singola pagina con 9 pozioni",
     "Pozione di Cura minore": {
         "classes": [
             "Bard"
