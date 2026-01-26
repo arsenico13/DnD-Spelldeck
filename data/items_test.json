@@ -3,40 +3,32 @@
         "classes": [
             "Bard"
         ],
-        "components": [
-            "V"
-        ],
-        "duration": "Instantaneous",
-        "level": 0,
+        "attunement": false,
+        "damage": "-",
+        "availability": "non comune",
         "material": null,
-        "range": "60 feet",
+        "weight": "13g",
         "ritual": false,
-        "school": "Enchantment",
-        "source": "Vicious Mockery",
-        "source_page": 285,
+        "itemtype": "Pozione",
+        "damagetype": "ghiaccio",
         "text": "You regain 2d4 + 2 hit points when you drink this potion. The potion's red liquid glimmers when agitated.",
-        "time": "1 action"
+        "cost": "50 mo"
     },
     "Pozione di cura maggiore": {
         "classes": [
             "Paladin",
             "Cleric"
         ],
-        "components": [
-            "S",
-            "V",
-            "M"
-        ],
-        "duration": "Concentrazione, fino a 1 minuto",
-        "level": 1,
+        "attunement": false,
+        "damage": "-",
+        "availability": "raro",
         "material": "a sprinkling of holy water",
-        "range": "18m (30ft)",
+        "weight": "15Kg",
         "ritual": false,
-        "school": "Ammaliamento",
-        "source": "Bless",
-        "source_page": 217,
+        "itemtype": "Pozione",
+        "damagetype": "contundente",
         "text": "You regain 4d4 + 4 hit points when you drink this potion. The potion's red liquid glimmers when agitated.",
-        "time": "1 azione"
+        "cost": "200 mo"
     },
     "Armor of Resistance": {
         "classes": [
@@ -48,19 +40,36 @@
             "Rogue",
             "Wizard"
         ],
-        "components": [
-            "S",
-            "V"
-        ],
-        "duration": "durat",
-        "level": 1,
+        "attunement": false,
+        "damage": "3d8",
+        "availability": "dubbio",
         "material": null,
-        "range": "dist",
+        "weight": "2g",
         "ritual": false,
-        "school": "scuola",
-        "source": "sorgente",
-        "source_page": 221,
+        "itemtype": "Variante (armatura)",
+        "damagetype": "tagliente",
         "text": "You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below.",
-        "time": "1 azione"
+        "cost": "2 mr"
+    },
+    "Lilalu": {
+        "classes": [
+            "Druid",
+            "Sorcerer",
+            "Cleric",
+            "Bard",
+            "Warlock",
+            "Rogue",
+            "Wizard"
+        ],
+        "attunement": false,
+        "damage": "-",
+        "availability": "leggendario",
+        "material": null,
+        "weight": "4 kg",
+        "ritual": true,
+        "itemtype": "Sbadabam!",
+        "damagetype": "perforante",
+        "text": "You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You have resistance to one type of damage while you wear this armor. The DM chooses the type or determines it randomly from the options below. You ha",
+        "cost": "4 ma"
     }
 }

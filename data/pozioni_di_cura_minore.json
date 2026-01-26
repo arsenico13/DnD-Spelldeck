@@ -1,0 +1,17 @@
+{
+    "Pozione di Cura minore": {
+        "classes": [
+            "Bard"
+        ],
+        "attunement": false,
+        "damage": "-",
+        "availability": "comune",
+        "material": null,
+        "weight": "25g",
+        "ritual": false,
+        "itemtype": "Pozione",
+        "damagetype": "-",
+        "text": "Recuperi 1d4 + 2 punti vita quando bevi questa pozione. | Il liquido rosso scuro della pozione brilla quando viene agitato.",
+        "cost": "30 mo"
+    }
+}
