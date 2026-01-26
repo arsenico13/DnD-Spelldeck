@@ -1,0 +1,3 @@
+  356  rm -f tex/*.aux tex/*.log tex/*.xdv tex/*.out tex/*.pdf tex/*.fls tex/*.fdb_latexmk
+  357  python3 generate_items.py -f "data/pozioni_di_cura_minore.json" > tex/items.tex
+  358  latexmk -f -xelatex -cd tex/items_cards.tex tex/printable_onepage.tex
