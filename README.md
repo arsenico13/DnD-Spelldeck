@@ -115,6 +115,12 @@ Nel caso si voglia ripetere 9 volte lo stesso oggetto, per esempio con una pozio
     latexmk -f xelatex -cd tex/pozioni_di_cura.tex tex/printable_onepage.tex
 
 
+Nel caso specifico, c'è uno script dedicato, `generate_single_item.sh`, che accetta come argomento il nome del file dati sorgente.
+Esempio di utilizzo:
+
+    generate_single_item.sh data/pozioni_di_cura.json
+
+
 ## comandi utili
 
 
