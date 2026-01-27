@@ -2,11 +2,29 @@
 \usepackage{ifxetex}
 \usepackage{fancyhdr}
 \usepackage{background}
+\usepackage{eso-pic}
 \usepackage[paperheight=8.89cm,paperwidth=6.35cm,margin=0.6cm,top=22mm,bottom=10mm,headheight=1cm]{geometry}
 
 \backgroundsetup{
     contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/background}}
 }
+
+% --- Overlay PNG dietro al testo, centrato verticalmente, a 10mm dal bordo basso ---
+\newcommand{\cardoverlay}{%
+  \AddToShipoutPictureBG{%
+    \AtPageLowerLeft{%
+      % sposta in alto l'origine di 10mm dal bordo inferiore
+      \raisebox{10mm}[0pt][0pt]{%
+        % box alto (paperheight - 10mm) con contenuto centrato verticalmente
+        \parbox[b][\dimexpr\paperheight-10mm\relax][c]{\paperwidth}{%
+          \centering
+          \includegraphics[width=\paperwidth]{images/potion.png}%
+        }%
+      }%
+    }%
+  }%
+}
+
 
 \ifxetex
 \usepackage{fontspec}
