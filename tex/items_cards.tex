@@ -4,12 +4,14 @@
 \usepackage{eso-pic}
 \usepackage{xparse}
 \usepackage{graphicx}
+\usepackage{tikz}
 \usepackage[paperheight=8.89cm,paperwidth=6.2cm,margin=0.4cm,top=21mm,bottom=10mm,headheight=1cm]{geometry}
 
 
 % ===== Overlay PNG opzionale per singola card =====
 \newcommand{\OverlayFile}{} % vuoto = nessun overlay
-\NewDocumentCommand{\OverlaySet}{m}{\gdef\OverlayFile{#1}}
+\newcommand{\OverlayOpacity}{1} % 0..1
+\NewDocumentCommand{\OverlaySet}{m m}{\gdef\OverlayFile{#1}\gdef\OverlayOpacity{#2}}
 \NewDocumentCommand{\OverlayClear}{}{\gdef\OverlayFile{}}
 
 % ===== Disegno: prima sfondo, poi overlay (entrambi dietro al testo) =====
@@ -24,7 +26,7 @@
       \raisebox{10mm}[0pt][0pt]{%
         \parbox[b][\dimexpr\paperheight-63mm\relax][c]{\paperwidth}{%
           \centering
-          \includegraphics[width=0.5\paperwidth]{\OverlayFile}%
+          \tikz \node[opacity=\OverlayOpacity,inner sep=0] {\includegraphics[width=0.5\paperwidth]{\OverlayFile}};%
         }%
       }%
     \fi
@@ -47,17 +49,18 @@
 \cfoot{\if\relax\damagetype\relax\else\scriptsize\damagetype\fi}
 \setlength{\parindent}{0pt}
 
-\NewDocumentEnvironment{spell}{O{} m m m m m m m}{%
+\NewDocumentEnvironment{spell}{O{} O{1} m m m m m m m}{%
     % #1 = overlay opzionale (può essere vuoto)
-    \IfBlankTF{#1}{\OverlayClear}{\OverlaySet{#1}}%
+    % #2 = opacità overlay (0..1), default 1
+    \IfBlankTF{#1}{\OverlayClear}{\OverlaySet{#1}{#2}}%
 
-    \def\spelltitle{#2}
-    \def\spellheader{#3}
-    \def\itemweight{#4}
-    \def\itemcost{#5}
-    \def\damage{#6}
-    \def\attunement{#7}
-    \def\damagetype{#8}
+    \def\spelltitle{#3}
+    \def\spellheader{#4}
+    \def\itemweight{#5}
+    \def\itemcost{#6}
+    \def\damage{#7}
+    \def\attunement{#8}
+    \def\damagetype{#9}
 
     \begin{minipage}[t][5cm][t]{\textwidth}
     \vspace{-3mm}
