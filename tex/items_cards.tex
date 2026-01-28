@@ -1,21 +1,24 @@
 \documentclass{article}
 \usepackage{ifxetex}
 \usepackage{fancyhdr}
-\usepackage{background}
 \usepackage{eso-pic}
 \usepackage{xparse}
+\usepackage{graphicx}
 \usepackage[paperheight=8.89cm,paperwidth=6.2cm,margin=0.4cm,top=21mm,bottom=10mm,headheight=1cm]{geometry}
 
-\backgroundsetup{
-    contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/background}}
-}
 
 % ===== Overlay PNG opzionale per singola card =====
 \newcommand{\OverlayFile}{} % vuoto = nessun overlay
 \NewDocumentCommand{\OverlaySet}{m}{\gdef\OverlayFile{#1}}
 \NewDocumentCommand{\OverlayClear}{}{\gdef\OverlayFile{}}
 
+% ===== Disegno: prima sfondo, poi overlay (entrambi dietro al testo) =====
 \AddToShipoutPictureBG{%
+  % 1) Sfondo
+  \AtPageLowerLeft{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/background}%
+  }%
+  % 2) Overlay opzionale
   \AtPageLowerLeft{%
     \ifx\OverlayFile\empty\else
       \raisebox{10mm}[0pt][0pt]{%
@@ -27,6 +30,7 @@
     \fi
   }%
 }
+
 
 \ifxetex
 \usepackage{fontspec}
@@ -43,8 +47,10 @@
 \cfoot{\if\relax\damagetype\relax\else\scriptsize\damagetype\fi}
 \setlength{\parindent}{0pt}
 
-\NewDocumentEnvironment{spell}{O{} m m m m m m m}{
-  \IfBlankTF{#1}{\OverlayClear}{\OverlaySet{#1}}
+\NewDocumentEnvironment{spell}{O{} m m m m m m m}{%
+    % #1 = overlay opzionale (può essere vuoto)
+    \IfBlankTF{#1}{\OverlayClear}{\OverlaySet{#1}}%
+
     \def\spelltitle{#2}
     \def\spellheader{#3}
     \def\itemweight{#4}
@@ -52,39 +58,41 @@
     \def\damage{#6}
     \def\attunement{#7}
     \def\damagetype{#8}
+
     \begin{minipage}[t][5cm][t]{\textwidth}
     \vspace{-3mm}
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Costo}
 
         \itemcost
-	\end{minipage}
+    \end{minipage}
     \hfill
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Tipo danno}
 
         \itemweight
-	\end{minipage}\\[3mm]
+    \end{minipage}\\[3mm]
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Sintonia}
 
         \attunement
-	\end{minipage}
+    \end{minipage}
     \hfill
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Danno}
 
         \damage
-	\end{minipage}
+    \end{minipage}
     \vspace{3mm}
     \headrule
     \vspace{3mm}
     \footnotesize
-}{
+}{%
     \end{minipage}
-    \OverlayClear
     \newpage
+    \OverlayClear % evita carry-over, ma solo dopo lo shipout della pagina corrente
 }
+
 
 \begin{document}
 \input{items}
