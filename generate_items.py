@@ -42,7 +42,7 @@ def truncate_string(string, max_len=MAX_TEXT_LENGTH):
 
 
 def print_item(name, availability, itemtype, weight, cost, ritual, damage, attunement,
-                material, text, damagetype=None, **kwargs):
+                material, text, damagetype=None, overlay=None, overlay_opacity=1, **kwargs):
 
     global ITEMS_TRUNCATED, ITEMS_TOTAL
 
@@ -58,8 +58,14 @@ def print_item(name, availability, itemtype, weight, cost, ritual, damage, attun
 
     ITEMS_TOTAL += 1
 
-    print("\\begin{spell}{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
-        (name, header, damagetype, cost, damage, 'si' if attunement else 'no', weight, textwrap.fill(new_text, 80)))
+    overlay = (overlay or "").strip()
+    if overlay:
+        begin_spell = "\\begin{spell}[%s][%s]" % (overlay, overlay_opacity)
+    else:
+        begin_spell = "\\begin{spell}"
+
+    print("%s{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
+        (begin_spell, name, header, damagetype, cost, damage, 'si' if attunement else 'no', weight, textwrap.fill(new_text, 80)))
 
 
 def get_spells(classes=None, levels=None, schools=None, names=None):
