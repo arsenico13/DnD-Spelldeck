@@ -3,6 +3,7 @@
 import argparse
 import sys
 import textwrap
+import re
 import json
 
 MAX_TEXT_LENGTH = 600
@@ -41,6 +42,21 @@ def truncate_string(string, max_len=MAX_TEXT_LENGTH):
     return rv
 
 
+def markdown_lite_to_latex(text):
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+
+    # Bold: **text** -> \textbf{text}
+    text = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
+    # Italic: __text__ -> \textit{text}
+    text = re.sub(r"__(.+?)__", r"\\textit{\1}", text)
+
+    # Paragraphs: blank line -> \par ; single newline -> line break
+    paragraphs = text.split("\n\n")
+    paragraphs = [p.replace("\n", " \\\\\n") for p in paragraphs]
+
+    return "\n\n\\par\n\n".join(paragraphs)
+
+
 def print_item(name, availability, itemtype, weight, cost, ritual, damage, attunement,
                 material, text, damagetype=None, overlay=None, overlay_opacity=1, **kwargs):
 
@@ -51,6 +67,7 @@ def print_item(name, availability, itemtype, weight, cost, ritual, damage, attun
     # header = LEVEL_STRING[level].format(school=school.lower(), ritual='ritual' if ritual else '').strip()
 
     new_text = truncate_string(text)
+    new_text = markdown_lite_to_latex(new_text)
 
     if new_text != text:
         ITEMS_TRUNCATED += 1
@@ -65,7 +82,7 @@ def print_item(name, availability, itemtype, weight, cost, ritual, damage, attun
         begin_spell = "\\begin{spell}"
 
     print("%s{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
-        (begin_spell, name, header, damagetype, cost, damage, 'si' if attunement else 'no', weight, textwrap.fill(new_text, 80)))
+        (begin_spell, name, header, damagetype, cost, damage, 'si' if attunement else 'no', weight, new_text))
 
 
 def get_spells(classes=None, levels=None, schools=None, names=None):
