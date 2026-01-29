@@ -140,6 +140,9 @@ In questo esempio sono utilizzati entrambi gli argomenti **opzionali**: il primo
 ed il secondo è il valore di opacità dell'immagine inserita.
 
 
+Ora il file ` generate_items.py` sopporta correttamente le opzioni "overlay" e "overlay_opacity" che possono essercinel json dei dati e genera il file tex correttamente.
+
+
 
 ## comandi utili
 
