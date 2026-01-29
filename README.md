@@ -121,6 +121,26 @@ Esempio di utilizzo:
     generate_single_item.sh data/pozioni_di_cura.json
 
 
+### Nuove opzioni per gli oggetti: immagini
+
+C'è la possibilità di specificare delle immagini che verranno poi inserite nelle carte. Per queste immagini,
+è anche possibile specificare l'opacità.
+
+Il tutto parte dal file .tex sorgente che diventa così:
+
+
+    \begin{spell}[images/roundpotioncol.png][0.3]{Pozione di Cura}{Pozione - non comune}{ghiaccio}{50 mo}{-}{no}{13g}
+
+    You regain 2d4 + 2 hit points when you drink this potion.
+
+    \end{spell}
+
+
+In questo esempio sono utilizzati entrambi gli argomenti **opzionali**: il primo è il path all'immagine da usare
+ed il secondo è il valore di opacità dell'immagine inserita.
+
+
+
 ## comandi utili
 
 
