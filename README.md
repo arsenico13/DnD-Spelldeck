@@ -150,6 +150,8 @@ Ora c'è una specie di "markdown" in `generate_items.py`. Cosa fa ora:
   - **testo** → \textbf{testo}
   - Riga vuota (doppio \n) → \par
   - Newline singolo (\n) → \\ (a capo forzato)
+    - Nota bene: non usare il doppio \\ perchè in alcune situazioni incasina la compilazione.
+  - Corsivo con il doppio underscore: __
 
 
 
