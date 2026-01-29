@@ -1,0 +1,36 @@
+{
+    "Flauto del Disincanto": {
+        "classes": [
+            "Bard"
+        ],
+        "attunement": true,
+        "damage": "-",
+        "availability": "non comune",
+        "overlay": "images/roundpotion.png",
+        "overlay_opacity": 0.55,
+        "material": null,
+        "weight": "600g",
+        "ritual": false,
+        "itemtype": "Oggetto meraviglioso",
+        "damagetype": "-",
+        "text": "Un flauto di pan di osso, decorato con nastri colorati ed incisioni. Può suonare una melodia che disfa un incantesimo. \\ Disincanto: Una volta al giorno. Scegli una creatura, un oggetto o un effetto magico entro 120ft: qualsiasi incantesimo di 2° livello o inferiore termina. Se usi questa abilità tira 1D6: con 6 questo potere si consuma e non è più utilizzabile.",
+        "cost": "200 mo"
+    },
+    "Corno del Richiamo": {
+        "classes": [
+            "Bard"
+        ],
+        "attunement": true,
+        "damage": "-",
+        "availability": "non comune",
+        "overlay": "images/roundpotion.png",
+        "overlay_opacity": 0.55,
+        "material": null,
+        "weight": "750g",
+        "ritual": false,
+        "itemtype": "Oggetto meraviglioso",
+        "damagetype": "-",
+        "text": "Una volta al giorno, se si è all'interno di un bosco, può essere suonato per tentare di richiamare creature fatate minori (es: una driade, 1d4 folletti).",
+        "cost": "150 mo"
+    }
+}
