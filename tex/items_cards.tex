@@ -1,12 +1,38 @@
 \documentclass{article}
 \usepackage{ifxetex}
 \usepackage{fancyhdr}
-\usepackage{background}
-\usepackage[paperheight=8.89cm,paperwidth=6.35cm,margin=0.6cm,top=22mm,bottom=10mm,headheight=1cm]{geometry}
+\usepackage{eso-pic}
+\usepackage{xparse}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[paperheight=8.89cm,paperwidth=6.2cm,margin=0.4cm,top=21mm,bottom=10mm,headheight=1cm]{geometry}
 
-\backgroundsetup{
-    contents={\includegraphics[width=\paperwidth,height=\paperheight]{images/background}}
+
+% ===== Overlay PNG opzionale per singola card =====
+\newcommand{\OverlayFile}{} % vuoto = nessun overlay
+\newcommand{\OverlayOpacity}{1} % 0..1
+\NewDocumentCommand{\OverlaySet}{m m}{\gdef\OverlayFile{#1}\gdef\OverlayOpacity{#2}}
+\NewDocumentCommand{\OverlayClear}{}{\gdef\OverlayFile{}}
+
+% ===== Disegno: prima sfondo, poi overlay (entrambi dietro al testo) =====
+\AddToShipoutPictureBG{%
+  % 1) Sfondo
+  \AtPageLowerLeft{%
+    \includegraphics[width=\paperwidth,height=\paperheight]{images/background}%
+  }%
+  % 2) Overlay opzionale
+  \AtPageLowerLeft{%
+    \ifx\OverlayFile\empty\else
+      \raisebox{10mm}[0pt][0pt]{%
+        \parbox[b][\dimexpr\paperheight-63mm\relax][c]{\paperwidth}{%
+          \centering
+          \tikz \node[opacity=\OverlayOpacity,inner sep=0] {\includegraphics[width=0.5\paperwidth]{\OverlayFile}};%
+        }%
+      }%
+    \fi
+  }%
 }
+
 
 \ifxetex
 \usepackage{fontspec}
@@ -23,46 +49,53 @@
 \cfoot{\if\relax\damagetype\relax\else\scriptsize\damagetype\fi}
 \setlength{\parindent}{0pt}
 
-\newenvironment{spell}[7]{
-    \def\spelltitle{#1}
-    \def\spellheader{#2}
-    \def\itemweight{#3}
-    \def\itemcost{#4}
-    \def\damage{#5}
-    \def\attunement{#6}
-    \def\damagetype{#7}
+\NewDocumentEnvironment{spell}{O{} O{1} m m m m m m m}{%
+    % #1 = overlay opzionale (può essere vuoto)
+    % #2 = opacità overlay (0..1), default 1
+    \IfBlankTF{#1}{\OverlayClear}{\OverlaySet{#1}{#2}}%
+
+    \def\spelltitle{#3}
+    \def\spellheader{#4}
+    \def\itemweight{#5}
+    \def\itemcost{#6}
+    \def\damage{#7}
+    \def\attunement{#8}
+    \def\damagetype{#9}
+
     \begin{minipage}[t][5cm][t]{\textwidth}
     \vspace{-3mm}
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Costo}
 
         \itemcost
-	\end{minipage}
+    \end{minipage}
     \hfill
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Tipo danno}
 
         \itemweight
-	\end{minipage}\\[3mm]
+    \end{minipage}\\[3mm]
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Sintonia}
 
         \attunement
-	\end{minipage}
+    \end{minipage}
     \hfill
     \begin{minipage}[t]{0.49\textwidth}
         \centering\footnotesize\scshape{\color{headercolor}Danno}
 
         \damage
-	\end{minipage}
+    \end{minipage}
     \vspace{3mm}
     \headrule
     \vspace{3mm}
     \footnotesize
-}{
+}{%
     \end{minipage}
     \newpage
+    \OverlayClear % evita carry-over, ma solo dopo lo shipout della pagina corrente
 }
+
 
 \begin{document}
 \input{items}
