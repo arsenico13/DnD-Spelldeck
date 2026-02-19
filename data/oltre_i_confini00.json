@@ -3,34 +3,69 @@
         "classes": [
             "Bard"
         ],
-        "attunement": true,
+        "attunement": false,
         "damage": "-",
         "availability": "non comune",
         "overlay": "images/roundpotion.png",
         "overlay_opacity": 0.55,
         "material": null,
-        "weight": "600g",
+        "weight": "600g | s002",
         "ritual": false,
         "itemtype": "Oggetto meraviglioso",
         "damagetype": "-",
-        "text": "Un flauto di pan di osso, decorato con nastri colorati ed incisioni. Può suonare una melodia che disfa un incantesimo. \n **Disincanto**: Una volta al giorno. Scegli una creatura, un oggetto o un effetto magico entro 120ft: qualsiasi incantesimo di 2° livello o inferiore termina. Se usi questa abilità tira 1D6: con 6 il potere si consuma e non è più utilizzabile.",
-        "cost": "200 mo"
+        "text": "Un flauto di pan di osso, decorato con nastri colorati ed incisioni. Può suonare una melodia che disfa un incantesimo. \n **Disincanto**: Una volta al giorno. Scegli una creatura, un oggetto o un effetto magico entro 120ft: qualsiasi incantesimo di 2° livello o inferiore sul bersaglio termina (un solo incantesimo alla volta). Se usi questa abilità tira 1D6: con 6 il potere Disincanto si consuma e non è più utilizzabile.",
+        "cost": "250 mo"
+    },
+    "Tazza Magica": {
+        "classes": [
+            "Bard"
+        ],
+        "attunement": false,
+        "damage": "-",
+        "availability": "comune",
+        "overlay": "images/roundpotion.png",
+        "overlay_opacity": 0.55,
+        "material": null,
+        "weight": "400g | s007",
+        "ritual": false,
+        "itemtype": "Oggetto meraviglioso",
+        "damagetype": "-",
+        "text": "Quando si impugna la tazza ed al suo interno è presente un liquido, è possibile pronunciare una parola di attivazione per ottenere l'effetto relativo. \n **Freddo**: la tazza raffredda il proprio contenuto ad un temperatura di 6°C e mantiene questa temperatura per 1 ora. \n **Caldo**: la tazza riscalda il proprio contenuto ad un temperatura di ~45°C e mantiene questa temperatura per 1 ora. \n **Basta**: interrompe l'effetto attualmente in corso.",
+        "cost": "15 mo"
+    },
+    "Ingredienti per pozioni": {
+        "classes": [
+            "Bard"
+        ],
+        "attunement": false,
+        "damage": "-",
+        "availability": "non comune",
+        "overlay": "images/roundpotion.png",
+        "overlay_opacity": 0.55,
+        "material": null,
+        "weight": "900g | s007",
+        "ritual": false,
+        "itemtype": "Oggetto meraviglioso",
+        "damagetype": "-",
+        "text": "Piccola scatola di legno scuro incisa con simboli arcani sbiaditi.\nAll’interno si trovano fiale di vetro sottile contenenti polveri iridescenti, radici essiccate dall’odore pungente, un sacchetto di petali violacei e una minuscola ampolla di liquido ambrato che sembra muoversi anche quando è fermo.\nGli ingredienti sono perfettamente conservati e pronti.",
+        "cost": "100 mo"
     },
     "Corno del Richiamo": {
         "classes": [
             "Bard"
         ],
-        "attunement": true,
+        "attunement": false,
         "damage": "-",
         "availability": "non comune",
         "overlay": "images/roundpotion.png",
         "overlay_opacity": 0.55,
         "material": null,
-        "weight": "750g",
+        "weight": "750g | s007",
         "ritual": false,
         "itemtype": "Oggetto meraviglioso",
         "damagetype": "-",
-        "text": "Una volta al giorno, se si è all'interno di un bosco, può essere suonato per tentare di richiamare creature fatate minori (es: una driade, 1d4 folletti).",
+        "text": "Una volta al giorno, se si è all'interno di un bosco, può essere suonato per tentare di richiamare creature fatate minori (es: una driade, 1d4 folletti). Il DM esegue un test in base al luogo in cui ci si trova. Le creature richiamate con il corno arrivano incuriosite ma non sono in altri modi influenzate nel loro comportamento e agiscono in base al loro istinto.",
         "cost": "150 mo"
     }
 }
+
