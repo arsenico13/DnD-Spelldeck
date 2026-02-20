@@ -50,6 +50,23 @@
         "text": "Piccola scatola di legno scuro incisa con simboli arcani sbiaditi.\nAll’interno si trovano fiale di vetro sottile contenenti polveri iridescenti, radici essiccate dall’odore pungente, un sacchetto di petali violacei e una minuscola ampolla di liquido ambrato che sembra muoversi anche quando è fermo.\nGli ingredienti sono perfettamente conservati e pronti.",
         "cost": "100 mo"
     },
+    "Pozione di Crescita": {
+        "classes": [
+            "Bard"
+        ],
+        "attunement": false,
+        "damage": "-",
+        "availability": "non comune",
+        "overlay": "images/roundpotion.png",
+        "overlay_opacity": 0.55,
+        "material": null,
+        "weight": "30g | s002",
+        "ritual": false,
+        "itemtype": "Oggetto meraviglioso",
+        "damagetype": "-",
+        "text": "Quando il personaggio beve questa poszione, ottiene l'effetto 'ingrandire' dell'incantesimo **Ingrandire/Ridurre** per **1d4 ore** (no concentrazione).",
+        "cost": "100 mo"
+    },
     "Tazza Magica": {
         "classes": [
             "Bard"
