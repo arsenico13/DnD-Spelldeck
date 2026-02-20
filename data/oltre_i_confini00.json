@@ -64,7 +64,7 @@
         "ritual": false,
         "itemtype": "Oggetto meraviglioso",
         "damagetype": "-",
-        "text": "Una volta al giorno, se si è all'interno di un bosco, può essere suonato per tentare di richiamare creature fatate minori (es: una driade, 1d4 folletti). Il DM esegue un test in base al luogo in cui ci si trova. Le creature richiamate con il corno arrivano incuriosite ma non sono in altri modi influenzate nel loro comportamento e agiscono in base al loro istinto.",
+        "text": "Una volta al giorno, se si è all'interno di un bosco, può essere suonato per tentare di richiamare creature fatate minori (es: una driade, 1d4 folletti).\nIl DM esegue un test in base al luogo in cui ci si trova.\nLe creature richiamate con il corno arrivano incuriosite ma non sono in altro modo influenzate nel loro comportamento e agiscono in base al loro istinto.",
         "cost": "150 mo"
     }
 }
