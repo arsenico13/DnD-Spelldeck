@@ -4271,7 +4271,7 @@
         "ritual": false,
         "school": "Evocazione",
         "source": "Lacerate (DM)",
-        "source_page": 000,
+        "source_page": 1,
         "text": "Compi un rapido gesto di taglio nell’aria per **lacerare una creatura** che puoi vedere entro gittata. Il bersaglio deve effettuare un tiro salvezza su Costituzione. Se fallisce il tiro salvezza, subisce **4d8 danni taglienti**; se lo supera, subisce metà dei danni. Se il tiro salvezza fallisce di 5 o più, la ferita erompe in un violento spruzzo di sangue e il bersaglio acquisisce un livello di sfinimento.\nAi Livelli Superiori. Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, i danni aumentano di 1d8 per ogni livello dello slot superiore al 2°.",
         "time": "1 azione"
     },
