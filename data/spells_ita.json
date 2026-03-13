@@ -2456,7 +2456,7 @@
         "text": "L'incantatore tocca una creatura e le concede un potenziamento magico, scegliendo uno tra gli effetti seguenti che permane fino al termine dell'incantesimo.\n**Astuzia della volpe**. Il bersaglio dispone di vantaggio alle prove di Intelligenza.\n**Forza del toro**. Il bersaglio dispone di vantaggio alle prove di Forza e la sua capacità di trasporto raddoppia.\n**Grazia del gatto**. Il bersaglio dispone di vantaggio alle prove di Destrezza e non subisce danni se cade da 6 metri o meno, purché non sia incapacitato.",
         "time": "1 azione"
     },
-    "Caratteristica potenziata (1)": {
+    "Caratteristica potenziata (2)": {
         "classes": [
             "Sessione009"
         ],
