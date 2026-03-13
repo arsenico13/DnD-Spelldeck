@@ -3612,7 +3612,7 @@
         "text": "A flash of light streaks toward a creature of your choice within range. Make a ranged spell attack against the target. On a hit, the target takes 4d6 radiant damage, and the next attack roll made against this target before the end of your next turn has advantage, thanks to the mystical dim light glittering on the target until then. At Higher Levels: When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
         "time": "1 azione"
     },
-    "Folata di Vento": {
+    "Folata di Vento (1)": {
         "classes": [
             "Sessione009"
         ],
@@ -3629,7 +3629,27 @@
         "school": "Invocazione",
         "source": "Gust of Wind",
         "source_page": 248,
-        "text": "Una linea di vento forte lunga 18m e larga 3m si diffonde dall'incantatore in una direzione a sua scelta per la durata dell'incantesimo. Ogni creatura che inizia il suo turno su quella linea deve superare un tiro salvezza su Forza o essere spinta di 4,5m più lontana dall'incantatore, nella stessa direzione della linea. Ogni creatura sulla linea deve spendere 60cm(2ft) di movimento per ogni 30cm(1ft) di cui si muove quando cerca di avvicinarsi all'incantatore. La folata disperde i gas e i vapori ed estingue candele, torce e simili fiamme prive di protezione nell'area. Fa tremolare le fiamme protette (es: lanterne) e 50% di probabilità di spegnerle. Con un'azione bonus in ogni suo turno prima che l'incant. termini, l'incantatore può cambiare la direzione in cui la linea di diffonde da sè. ",
+        "text": "Una linea di vento forte lunga 18m e larga 3m si diffonde dall'incantatore in una direzione a sua scelta per la durata dell'incantesimo. Ogni creatura che inizia il suo turno su quella linea deve superare un tiro salvezza su Forza o essere spinta di 4,5m più lontana dall'incantatore, nella stessa direzione della linea. Ogni creatura sulla linea deve spendere 60cm(2ft) di movimento per ogni 30cm(1ft) di cui si muove quando cerca di avvicinarsi all'incantatore.",
+        "time": "1 azione"
+    },
+    "Folata di Vento (2)": {
+        "classes": [
+            "Sessione009"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Centrazione, fino a 1 minuto",
+        "level": 2,
+        "material": "un seme di legume",
+        "range": "Sè (linea di 60ft/18m)",
+        "ritual": false,
+        "school": "Invocazione",
+        "source": "Gust of Wind",
+        "source_page": 248,
+        "text": "La folata disperde i gas e i vapori ed estingue candele, torce e simili fiamme prive di protezione nell'area. Fa tremolare le fiamme protette (es: lanterne) e 50% di probabilità di spegnerle. Con un'azione bonus in ogni suo turno prima che l'incant. termini, l'incantatore può cambiare la direzione in cui la linea di diffonde da sè. ",
         "time": "1 azione"
     },
     "Hail of Thorns": {
@@ -4272,7 +4292,7 @@
         "school": "Evocazione",
         "source": "Lacerate (DM)",
         "source_page": 1,
-        "text": "Compi un rapido gesto di taglio nell’aria per **lacerare una creatura** che puoi vedere entro gittata. Il bersaglio deve effettuare un tiro salvezza su Costituzione. Se fallisce il tiro salvezza, subisce **4d8 danni taglienti**; se lo supera, subisce metà dei danni. Se il tiro salvezza fallisce di 5 o più, la ferita erompe in un violento spruzzo di sangue e il bersaglio acquisisce un livello di sfinimento.\nAi Livelli Superiori. Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, i danni aumentano di 1d8 per ogni livello dello slot superiore al 2°.",
+        "text": "Compi un rapido gesto di taglio nell’aria per lacerare una creatura che puoi vedere entro gittata. Il bersaglio deve effettuare un TS su Costituzione. Se fallisce il tiro salvezza, subisce **4d8 danni taglienti**; se lo supera, subisce metà dei danni. Se il tiro salvezza fallisce di 5 o più, la ferita erompe in un violento spruzzo di sangue e il bersaglio acquisisce un livello di sfinimento. Ai Livelli Superiori. Quando lanci questo incantesimo utilizzando uno slot incantesimo di 3° livello o superiore, i danni aumentano di 1d8 per ogni livello dello slot superiore al 2°.",
         "time": "1 azione"
     },
     "Legend Lore": {
@@ -5025,7 +5045,7 @@
         "text": "You make terrain in an area up to 1 mile square look, sound, smell, and even feel like some other sort of terrain. The terrain's general shape remains the same, however. Open fields or a road could be made to resemble a swamp, hill, crevasse, or some other difficult or impassable terrain. A pond can be made to seem like a grassy meadow, a precipice like a gentle slope, or a rock-strewn gully like a wide and smooth road. Similarly, you can alter the appearance of structures, or add them where none are present. The spell doesn't disguise, conceal, or add creatures. The illusion includes audible, visual, tactile, and olfactory elements, so it can turn clear ground into difficult terrain (or vice versa) or otherwise impede movement through the area. Any piece of the illusory terrain (such as a rock or stick) that is removed from the spell's area disappears immediately. Creatures with truesight can see through the illusion to the terrain's true form, however, all other elements of the illusion remain, so while the creature is aware of the illusion's presence, the creature can still physically interact with the illusion.",
         "time": "10 minutes"
     },
-    "Immagine Speculare": {
+    "Immagine Speculare (1)": {
         "classes": [
             "Sessione009"
         ],
@@ -5041,7 +5061,26 @@
         "school": "Illusione",
         "source": "Mirror Image",
         "source_page": 260,
-        "text": "Tre duplicati illusori dell'incantatore compaiono nel suo spazio. Finchè l'incantesimo non termina, i duplicati si muovono assieme a lui e imitano le sue azioni, cambiando posizione in modo che sia impossibile individuare quale immagine sia quella vera. L'incantatore può usare la sua azione per congedare i duplicati. Ogni volta che una creatura bersaglia l'incantatore con un attacco, l'incantatore dira 1d20 per determinare chi viene colpito.\nCon 3 duplicati: 6+ colpisce un duplicato; Con 2 duplicati: 8+; Con 1 duplicato: 11+. La CA di un duplicato è 10+DES dell'incantatore. Se colpito, il duplicato è distrutto. [...] Una creatura non è influenzata dall'incantesimo se non può vedere, se si affida a sensi diversi dalla vista (es: blindsight/vista cieca) o se può percepire illusioni come false (es:truesight/visione del vero).",
+        "text": "Tre duplicati illusori dell'incantatore compaiono nel suo spazio. Finchè l'incantesimo non termina, i duplicati si muovono assieme a lui e imitano le sue azioni, cambiando posizione in modo che sia impossibile individuare quale immagine sia quella vera. L'incantatore può usare la sua azione per congedare i duplicati. Ogni volta che una creatura bersaglia l'incantatore con un attacco, l'incantatore dira 1d20 per determinare chi viene colpito.",
+        "time": "1 azione"
+    },
+    "Immagine Speculare (2)": {
+        "classes": [
+            "Sessione009"
+        ],
+        "components": [
+            "S",
+            "V"
+        ],
+        "duration": "1 minuto",
+        "level": 2,
+        "material": null,
+        "range": "Sè",
+        "ritual": false,
+        "school": "Illusione",
+        "source": "Mirror Image",
+        "source_page": 260,
+        "text": "Con 3 duplicati: 6+ colpisce un duplicato; Con 2 duplicati: 8+; Con 1 duplicato: 11+. La CA di un duplicato è 10+DES dell'incantatore. Se colpito, il duplicato è distrutto. [...] Una creatura non è influenzata dall'incantesimo se non può vedere, se si affida a sensi diversi dalla vista (es: blindsight/vista cieca) o se può percepire illusioni come false (es:truesight/visione del vero).",
         "time": "1 azione"
     },
     "Mislead": {
