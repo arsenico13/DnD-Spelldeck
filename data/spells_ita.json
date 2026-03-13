@@ -2436,27 +2436,44 @@
         "text": "A nonmagical weapon you touch becomes a magic weapon. Choose one of the following damage types - acid, cold, fire, lightning, or thunder. For the duration, the weapon has a +1 bonus to attack rolls and deals an extra 1d4 damage of the chosen type when it hits. At Higher Levels: When you cast this spell using a spell slot of 5th or 6th level, the bonus to attack rolls increases to +2 and the extra damage increases to 2d4. When you use a spell slot of 7th level or higher, the bonus increases to +3 and the extra damage increases to 3d4.",
         "time": "1 azione"
     },
-    "Enhance Ability": {
+    "Caratteristica potenziata (1)": {
         "classes": [
-            "Druid",
-            "Sorcerer",
-            "Cleric",
-            "Bard"
+            "Sessione009"
         ],
         "components": [
             "S",
             "V",
             "M"
         ],
-        "duration": "Concentration, up to 1 hour",
+        "duration": "Concentrazione, fino a 1 ora",
         "level": 2,
-        "material": "fur or a feather from a beast",
-        "range": "Touch",
+        "material": "ciuffio di pelliccia o piuma di una bestia",
+        "range": "Contatto",
         "ritual": false,
         "school": "Trasmutazione",
-        "source": "Player's Handbook",
+        "source": "Enhance Ability",
         "source_page": 237,
-        "text": "You touch a creature and bestow upon it a magical enhancement. Choose one of the following effects - the target gains the effect until the spell ends. Bear's Endurance: The target has advantage on Constitution checks. It also gains 2d6 temporary hit points, which are lost when the spell ends. Bull's Strength: The target has advantage on Strength checks, and his or her carrying capacity doubles. Cat's Grace: The target has advantage on Dexterity checks. It also doesn't take damage from falling 20 feet or less if it isn't incapacitated. Eagle's Splendor: The target has advantage on Charisma checks. Fox's Cunning: The target has advantage on Intelligence checks. Owl's Wisdom: The target has advantage on Wisdom checks. At Higher Levels: When you cast this spell using a spell slot of 3rd level or higher, you can target one additional creature for each slot level above 2nd.",
+        "text": "L'incantatore tocca una creatura e le concede un potenziamento magico, scegliendo uno tra gli effetti seguenti che permane fino al termine dell'incantesimo.\n**Astuzia della volpe**. Il bersaglio dispone di vantaggio alle prove di Intelligenza.\n**Forza del toro**. Il bersaglio dispone di vantaggio alle prove di Forza e la sua capacità di trasporto raddoppia.\n**Grazia del gatto**. Il bersaglio dispone di vantaggio alle prove di Destrezza e non subisce danni se cade da 6 metri o meno, purché non sia incapacitato.",
+        "time": "1 azione"
+    },
+    "Caratteristica potenziata (1)": {
+        "classes": [
+            "Sessione009"
+        ],
+        "components": [
+            "S",
+            "V",
+            "M"
+        ],
+        "duration": "Concentrazione, fino a 1 ora",
+        "level": 2,
+        "material": "ciuffio di pelliccia o piuma di una bestia",
+        "range": "Contatto",
+        "ritual": false,
+        "school": "Trasmutazione",
+        "source": "Enhance Ability",
+        "source_page": 237,
+        "text": "(cont)\n**Resistenza dell'orso**. Il bersaglio dispone di vantaggio alle prove di Costituzione e ottiene inoltre 2d6 punti ferita temporanei, che perde al termine dell'incantesimo.\n**Saggezza del gufo**. Il bersaglio dispone di vantaggio alle prove di Saggezza.\n**Splendore dell'aquila**. Il bersaglio dispone di vantaggio alle prove di Carisma. [...]",
         "time": "1 azione"
     },
     "Ingrandire/Ridurre (1)": {
@@ -5036,27 +5053,23 @@
         "text": "You become invisible at the same time that an illusory double of you appears where you are standing. The double lasts for the duration, but the invisibility ends if you attack or cast a spell. You can use your action to move your illusory double up to twice your speed and make it gesture, speak, and behave in whatever way you choose. You can see through its eyes and hear through its ears as if you were located where it is. On each of your turns as a bonus action, you can switch from using its senses to using your own, or back again. While you are using its senses, you are blinded and deafened in regard to your own surroundings.",
         "time": "1 azione"
     },
-    "Misty Step": {
+    "Passo Velato": {
         "classes": [
-            "Druid",
-            "Paladin",
-            "Sorcerer",
-            "Warlock",
-            "Wizard"
+            "Sessione009"
         ],
         "components": [
             "V"
         ],
-        "duration": "Instantaneous",
+        "duration": "Istantaneo",
         "level": 2,
         "material": null,
         "range": "Self",
         "ritual": false,
-        "school": "Conjuration",
-        "source": "Player's Handbook",
+        "school": "Evocazione",
+        "source": "Misty Step",
         "source_page": 260,
-        "text": "Briefly surrounded by silvery mist, you teleport up to 9m/30ft to an unoccupied space that you can see.",
-        "time": "1 bonus action"
+        "text": "L'incantatore è avvolto per un istante da una foschia argentata e si teletrasporta di un massimo di 9m/30ft fino a uno spazio libero che è in grado di vedere.",
+        "time": "1 azione bonus"
     },
     "Modify Memory": {
         "classes": [
