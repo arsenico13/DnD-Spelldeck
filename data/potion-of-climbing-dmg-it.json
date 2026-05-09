@@ -1,0 +1,17 @@
+{
+  "Pozione di Scalare": {
+    "classes": [],
+    "attunement": false,
+    "damage": "-",
+    "availability": "comune",
+    "overlay": "",
+    "overlay_opacity": null,
+    "material": "",
+    "weight": "",
+    "ritual": false,
+    "itemtype": "P",
+    "damagetype": "-",
+    "text": "Quando il PG beve la pozione, ottiene una velocità di scalare parti alla sua velocità per 1 ora. Per la stessa durata dispone anche di vantaggio alle prove di FOR (Atletica) effettuate per scalare.\r\nAspetto: fasce separate di colore marrone, argento e grigio. Non si mescolano.",
+    "cost": ""
+  }
+}
