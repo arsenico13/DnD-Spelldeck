@@ -276,6 +276,12 @@ Dal root del repository:
 python3 gui/app.py
 ```
 
+In alternativa funziona anche:
+
+```bash
+python3 -m gui.app
+```
+
 ### Funzioni disponibili nella GUI
 
 - selezione del dataset JSON magie
