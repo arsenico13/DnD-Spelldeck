@@ -10,6 +10,7 @@ Ad oggi il repository supporta:
 - generazione carte oggetto tramite script separati
 - GUI desktop Python minima per il flusso magie
 - backend Python riusabile anche per il dominio oggetti
+- compilazione PDF oggetti disponibile dal backend Python
 
 La parte piu' stabilizzata e preparata per evoluzioni future e' attualmente il dominio "magie".
 
@@ -50,6 +51,8 @@ La generazione del PDF invece si'.
 - `tex/spells.tex`: file generato per il contenuto magie
 - `tex/items.tex`: file generato per il contenuto oggetti
 - `tex/printable.pdf`: PDF finale delle magie, generato dopo compilazione
+- `tex/printable_items.pdf`: PDF finale del layout oggetti
+- `tex/printable_onepage.pdf`: PDF finale per il caso one-page oggetti
 
 ### Core Python riusabile
 
@@ -188,6 +191,8 @@ Funzioni principali:
 - `ensure_latexmk_available()`
 - `build_latexmk_command(...)`
 - `compile_spell_pdf(...)`
+- `compile_items_pdf(...)`
+- `compile_single_page_items_pdf(...)`
 
 ### `spelldeck/items_data.py`
 
@@ -391,7 +396,7 @@ Significa che:
 - ora esiste anche un primo core Python dedicato in `spelldeck/items_*`
 - `generate_items.py` e' stato alleggerito, ma resta ancora un wrapper CLI legacy
 - non esiste ancora supporto GUI per gli oggetti
-- non e' ancora stato esteso il compilatore Python al flusso oggetti
+- il compilatore Python ora supporta anche layout standard e one-page degli oggetti
 
 ## Test automatici
 
@@ -446,6 +451,26 @@ Eseguire solo i test della compilazione:
 
 ```bash
 python3 -m unittest tests.test_compiler
+```
+
+## Utilizzo del backend oggetti
+
+Generare `tex/items.tex`:
+
+```bash
+python3 -c 'from spelldeck.items_service import generate_items_tex_file; print(generate_items_tex_file(names=["Pozione di Cura"]))'
+```
+
+Compilare il PDF oggetti standard:
+
+```bash
+python3 -c 'from spelldeck.compiler import compile_items_pdf; r = compile_items_pdf(); print(r.returncode, r.output_pdf)'
+```
+
+Compilare il PDF one-page per 9 copie:
+
+```bash
+python3 -c 'from spelldeck.compiler import compile_single_page_items_pdf; r = compile_single_page_items_pdf(); print(r.returncode, r.output_pdf)'
 ```
 
 ## Cosa coprono i test
@@ -546,12 +571,12 @@ Completato:
 - backend Python per generazione e compilazione magie
 - GUI desktop `tkinter` MVP per le magie
 - primo refactor del dominio oggetti con backend e test di base
+- compilazione PDF oggetti nel backend Python
 - nuova suite test
 
 Non ancora fatto:
 
 - supporto oggetti nella GUI
-- compilazione PDF oggetti nel backend Python
 - preview grafica embedded del PDF
 - riallineamento del `Makefile`
 

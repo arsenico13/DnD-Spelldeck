@@ -100,6 +100,18 @@ The item pipeline supports:
 - overlay opacity
 - lightweight markdown-like formatting in item text
 
+Compile the standard item PDF:
+
+```bash
+python3 -c 'from spelldeck.compiler import compile_items_pdf; r = compile_items_pdf(); print(r.returncode, r.output_pdf)'
+```
+
+Compile the one-page item PDF for 9 copies of the generated card:
+
+```bash
+python3 -c 'from spelldeck.compiler import compile_single_page_items_pdf; r = compile_single_page_items_pdf(); print(r.returncode, r.output_pdf)'
+```
+
 For multi-value filters, use comma-separated values such as:
 
 - `wizard, bard`
