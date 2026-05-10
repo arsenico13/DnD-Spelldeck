@@ -9,6 +9,7 @@ Ad oggi il repository supporta:
 - generazione carte magia tramite pipeline Python + LaTeX
 - generazione carte oggetto tramite script separati
 - GUI desktop Python minima per il flusso magie
+- backend Python riusabile anche per il dominio oggetti
 
 La parte piu' stabilizzata e preparata per evoluzioni future e' attualmente il dominio "magie".
 
@@ -62,10 +63,16 @@ Contenuto rilevante:
 - `spelldeck/spells_filters.py`
 - `spelldeck/spells_tex.py`
 - `spelldeck/spells_service.py`
+- `spelldeck/items_data.py`
+- `spelldeck/items_filters.py`
+- `spelldeck/items_tex.py`
+- `spelldeck/items_service.py`
 - `spelldeck/compiler.py`
 - `spelldeck/io_utils.py`
 
-Questi moduli rappresentano il backend riusabile del flusso magie.
+Questi moduli rappresentano il backend riusabile del progetto. Il ramo magie e'
+piu' completo, mentre il ramo oggetti e' in fase di convergenza verso la stessa
+architettura.
 
 ### GUI
 
@@ -86,6 +93,9 @@ Contenuto attuale:
 - `tests/test_spells_filters.py`
 - `tests/test_spells_tex.py`
 - `tests/test_spells_service.py`
+- `tests/test_items_data.py`
+- `tests/test_items_tex.py`
+- `tests/test_items_service.py`
 - `tests/test_compiler.py`
 
 ## Organizzazione del codice magie
@@ -178,6 +188,63 @@ Funzioni principali:
 - `ensure_latexmk_available()`
 - `build_latexmk_command(...)`
 - `compile_spell_pdf(...)`
+
+### `spelldeck/items_data.py`
+
+Responsabilita':
+
+- path default del dataset oggetti
+- caricamento JSON
+- validazione minima dei record
+
+Funzioni principali:
+
+- `load_items(path=None)`
+- `validate_item_record(name, data)`
+
+### `spelldeck/items_filters.py`
+
+Responsabilita':
+
+- filtro per nome
+- filtro legacy per classi, quando presente nel dataset
+
+Funzioni principali:
+
+- `filter_items(items, names=None, classes=None)`
+
+### `spelldeck/items_tex.py`
+
+Responsabilita':
+
+- troncamento testo
+- conversione markdown-lite in LaTeX
+- costruzione header oggetto
+- rendering TeX della singola carta
+- rendering TeX di una lista di carte
+
+Funzioni principali:
+
+- `truncate_string(...)`
+- `markdown_lite_to_latex(...)`
+- `build_item_header(...)`
+- `build_item_text(...)`
+- `render_item_tex(...)`
+- `render_items_tex(...)`
+
+### `spelldeck/items_service.py`
+
+Responsabilita':
+
+- orchestrazione applicativa del flusso oggetti
+- generazione del contenuto TeX
+- scrittura diretta di `tex/items.tex`
+- conteggio elementi troncati
+
+Funzioni principali:
+
+- `generate_items_tex(...)`
+- `generate_items_tex_file(...)`
 
 ### `spelldeck/io_utils.py`
 
@@ -321,9 +388,10 @@ Significa che:
 
 - esiste una pipeline funzionante
 - esistono template e dataset dedicati
-- la logica e' ancora concentrata in `generate_items.py`
-- non esiste ancora un core pulito equivalente a `spelldeck/` per gli oggetti
+- ora esiste anche un primo core Python dedicato in `spelldeck/items_*`
+- `generate_items.py` e' stato alleggerito, ma resta ancora un wrapper CLI legacy
 - non esiste ancora supporto GUI per gli oggetti
+- non e' ancora stato esteso il compilatore Python al flusso oggetti
 
 ## Test automatici
 
@@ -366,6 +434,12 @@ Eseguire solo i test del servizio magie:
 
 ```bash
 python3 -m unittest tests.test_spells_service
+```
+
+Eseguire solo i test del dominio oggetti:
+
+```bash
+python3 -m unittest tests.test_items_data tests.test_items_tex tests.test_items_service
 ```
 
 Eseguire solo i test della compilazione:
@@ -426,6 +500,33 @@ Copre:
 - gestione di compilazione fallita
 - errore se `latexmk` non e' presente
 
+### `tests/test_items_data.py`
+
+Copre:
+
+- caricamento dataset oggetti di default
+- caricamento dataset custom
+- errore su file mancante
+- errore su JSON invalido
+
+### `tests/test_items_tex.py`
+
+Copre:
+
+- troncamento testo
+- conversione markdown-lite
+- costruzione header
+- rendering TeX con e senza overlay
+
+### `tests/test_items_service.py`
+
+Copre:
+
+- generazione di `items.tex`
+- selezione per nome
+- uso dataset custom
+- conteggio oggetti e troncamenti
+
 ## Note sui commenti nel codice
 
 I commenti sono stati aggiunti solo nei punti in cui servono davvero:
@@ -444,12 +545,13 @@ Completato:
 - estrazione core Python riusabile
 - backend Python per generazione e compilazione magie
 - GUI desktop `tkinter` MVP per le magie
+- primo refactor del dominio oggetti con backend e test di base
 - nuova suite test
 
 Non ancora fatto:
 
-- refactor del dominio oggetti
 - supporto oggetti nella GUI
+- compilazione PDF oggetti nel backend Python
 - preview grafica embedded del PDF
 - riallineamento del `Makefile`
 

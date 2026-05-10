@@ -2,152 +2,68 @@
 
 import argparse
 import sys
-import textwrap
-import re
-import json
-
-MAX_TEXT_LENGTH = 600
+from spelldeck.items_data import DEFAULT_ITEMS_PATH, load_items
+from spelldeck.items_service import generate_items_tex, parse_filter_string
+from spelldeck.items_tex import MAX_TEXT_LENGTH, build_item_text, render_item_tex
 
 ITEMS_TRUNCATED = 0
 ITEMS_TRUNCATED_NAMES = []
 ITEMS_TOTAL = 0
 
-LEVEL_STRING = {
-    0: '{school} cantrip {ritual}',
-    1: '1st level {school} {ritual}',
-    2: '2nd level {school} {ritual}',
-    3: '3rd level {school} {ritual}',
-    4: '4th level {school} {ritual}',
-    5: '5th level {school} {ritual}',
-    6: '6th level {school} {ritual}',
-    7: '7th level {school} {ritual}',
-    8: '8th level {school} {ritual}',
-    9: '9th level {school} {ritual}',
-}
-
-with open('data/spells.json') as json_data:
-    SPELLS = json.load(json_data)
+ITEMS = load_items(DEFAULT_ITEMS_PATH)
 
 
-def truncate_string(string, max_len=MAX_TEXT_LENGTH):
-    rv = ""
-
-    for sentence in string.split(".")[:-1]:
-        if len(rv + sentence) < MAX_TEXT_LENGTH - 2:
-            rv += sentence + "."
-        else:
-            rv += ".."
-            break
-
-    return rv
-
-
-def markdown_lite_to_latex(text):
-    text = text.replace("\r\n", "\n").replace("\r", "\n")
-
-    # Bold: **text** -> \textbf{text}
-    text = re.sub(r"\*\*(.+?)\*\*", r"\\textbf{\1}", text)
-    # Italic: __text__ -> \textit{text}
-    text = re.sub(r"__(.+?)__", r"\\textit{\1}", text)
-
-    # Paragraphs: blank line -> \par ; single newline -> line break
-    paragraphs = text.split("\n\n")
-    paragraphs = [p.replace("\n", " \\\\\n") for p in paragraphs]
-
-    return "\n\n\\par\n\n".join(paragraphs)
-
-
-def print_item(name, availability, itemtype, weight, cost, ritual, damage, attunement,
-                material, text, damagetype=None, overlay=None, overlay_opacity=1, **kwargs):
+def print_item(name, **item_data):
 
     global ITEMS_TRUNCATED, ITEMS_TOTAL
 
-    # deve essere composto da tipo di oggetto + disponibilità dell'oggetto
-    header = "" + itemtype + " - " + availability
-    # header = LEVEL_STRING[level].format(school=school.lower(), ritual='ritual' if ritual else '').strip()
-
-    new_text = truncate_string(text)
-    new_text = markdown_lite_to_latex(new_text)
-
-    if new_text != text:
+    _, was_truncated = build_item_text(item_data["text"], max_len=MAX_TEXT_LENGTH)
+    if was_truncated:
         ITEMS_TRUNCATED += 1
         ITEMS_TRUNCATED_NAMES.append(name)
 
     ITEMS_TOTAL += 1
-
-    overlay = (overlay or "").strip()
-    if overlay:
-        begin_spell = "\\begin{spell}[%s][%s]" % (overlay, overlay_opacity)
-    else:
-        begin_spell = "\\begin{spell}"
-
-    print("%s{%s}{%s}{%s}{%s}{%s}{%s}{%s}\n\n%s\n\n\\end{spell}\n" %
-        (begin_spell, name, header, damagetype, cost, damage, 'si' if attunement else 'no', weight, new_text))
+    print(render_item_tex(name, item_data))
 
 
-def get_spells(classes=None, levels=None, schools=None, names=None):
-    classes = {i.lower() for i in classes} if classes is not None else None
-    schools = {i.lower() for i in schools} if schools is not None else None
-    names = {i.lower() for i in names} if names is not None else None
-
-    return [
-        (name, spell) for name, spell in sorted(SPELLS.items(), key=lambda x: x[0]) if
-        (classes is None or len(classes & {i.lower() for i in spell['classes']}) > 0) and
-        (schools is None or spell['school'].lower() in schools) and
-        (levels is None or spell['level'] in levels) and
-        (names is None or name.lower() in names)
-    ]
-
-
-def parse_levels(levels):
-    rv = None
-
-    if levels is not None:
-        rv = set()
-
-        for level_spec in levels:
-            tmp = level_spec.split('-')
-            if len(tmp) == 1:
-                rv.add(int(tmp[0]))
-            elif len(tmp) == 2:
-                rv |= set(range(int(tmp[0]), int(tmp[1]) + 1))
-
-    return rv
+def get_items(names=None, classes=None):
+    _, item_items, _ = generate_items_tex(
+        dataset_path=DEFAULT_ITEMS_PATH,
+        names=names,
+        classes=classes,
+    )
+    return item_items
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-c", "--class", type=str, action='append', dest='classes',
-        help="only select spells for this class, can be used multiple times "
-             "to select multiple classes."
-    )
-    parser.add_argument(
-        "-l", "--level", type=str, action='append', dest='levels',
-        help="only select spells of a certain level, can be used multiple "
-             "times and can contain a range such as `1-3`."
-    )
-    parser.add_argument(
-        "-s", "--school", type=str, action='append', dest='schools',
-        help="only select spells of a school, can be used multiple times."
+        help="select only items that match one of the given classes. "
+             "This is mainly kept for legacy datasets."
     )
     parser.add_argument(
         "-n", "--name", type=str, action='append', dest='names',
-        help="select spells with one of several given names."
+        help="select items with one of several given names."
     )
     parser.add_argument(
         "-f", "--filename", type=str, action='store', dest='filename',
-        help="specify a different filename for the spells data."
+        help="specify a different filename for the items data."
     )
     args = parser.parse_args()
 
-    if args.filename != "":
-        # se viene specificato un filename, allora uso quel file come input dei dati
-        with open(args.filename) as json_data:
-            SPELLS = json.load(json_data)
+    if args.filename:
+        ITEMS = load_items(args.filename)
 
-    for name, spell in get_spells(args.classes, parse_levels(args.levels), args.schools, args.names):
-        print_item(name, **spell)
+    names = parse_filter_string(",".join(args.names)) if args.names else None
+    classes = parse_filter_string(",".join(args.classes)) if args.classes else None
+
+    for name, item in generate_items_tex(
+        dataset_path=args.filename or DEFAULT_ITEMS_PATH,
+        names=names,
+        classes=classes,
+    )[1]:
+        print_item(name, **item)
 
     print('Ho dovuto troncare il testo di %d su %d items a %d caratteri.' % (ITEMS_TRUNCATED, ITEMS_TOTAL, MAX_TEXT_LENGTH), file=sys.stderr)
 
