@@ -1,26 +1,28 @@
 # D&D Spelldeck
 
-While Dungeons and Dragons is great fun, it can be a chore to wade through the
-Player's Handbook to find out what one of your spells does. This tool attempts
-to make this easier by allowing you to create a deck of spells; a pile of cards
-with all your spells and the most important information about them so you can
-speed up the game.
+Generate printable D&D spell and item cards from JSON datasets using Python and
+LaTeX.
 
-## Current Status
+The project currently supports:
 
-The repository currently includes:
+- spell cards from CLI, backend and GUI
+- item cards from CLI, backend and GUI
+- standard printable PDFs
+- one-page item PDFs for 9 copies of the same generated card
 
-- a CLI flow for spell cards
-- a reusable Python backend for spell generation and LaTeX compilation
-- a desktop GUI written in Python with `tkinter` for spell and item cards
-- a reusable Python backend for item TeX generation
-- a separate CLI flow for item cards
 
-The spell flow is the most up to date part of the project.
+## Preview
+
+A card looks something like this:
+
+![An example of a spell card](http://i.imgur.com/gLl9PwI.png)
+
+Some cards need to truncate text because the available space is limited.
+
 
 ## Requirements
 
-To use the current spell pipeline you need:
+To use the full generation pipeline you need:
 
 - Python 3
 - `latexmk`
@@ -28,9 +30,77 @@ To use the current spell pipeline you need:
 
 Unit tests only require Python 3.
 
+
+## Project Layout
+
+Main entrypoints:
+
+- `generate.py`: CLI for spell cards
+- `generate_items.py`: CLI for item cards
+- `gui/app.py`: desktop GUI entrypoint
+
+Reusable backend:
+
+- `spelldeck/spells_*`: spell loading, filtering, TeX rendering and services
+- `spelldeck/items_*`: item loading, filtering, TeX rendering and services
+- `spelldeck/compiler.py`: LaTeX compilation services
+
+Templates and generated files:
+
+- `tex/cards.tex`
+- `tex/items_cards.tex`
+- `tex/printable.tex`
+- `tex/printable_items.tex`
+- `tex/printable_onepage.tex`
+
+Datasets:
+
+- `data/spells.json`: default spells dataset
+- `data/items_test.json`: default items dataset
+- additional custom datasets in `data/`
+
+
 ## Quick Start
 
-### CLI
+### GUI
+
+Start the GUI from the repository root:
+
+```bash
+python3 gui/app.py
+```
+
+Alternative:
+
+```bash
+python3 -m gui.app
+```
+
+The GUI has two tabs:
+
+- `Magie`
+- `Oggetti`
+
+Current GUI features:
+
+- select a JSON dataset
+- filter spells by class, level, school and name
+- filter items by name and optional legacy class field
+- generate TeX
+- compile spell PDFs
+- compile item PDFs
+- compile one-page item PDFs for 9 copies
+
+Filter fields accept comma-separated values, for example:
+
+- `wizard, bard`
+- `1, 2, 5-7`
+- `abjuration, evocation`
+- `Alarm, Augury`
+- `Pozione di Cura, Armor of Resistance`
+
+
+### CLI: Spells
 
 Generate `tex/spells.tex`:
 
@@ -38,7 +108,7 @@ Generate `tex/spells.tex`:
 python3 generate.py > tex/spells.tex
 ```
 
-Generate only selected spells:
+Generate filtered spells:
 
 ```bash
 python3 generate.py -c wizard -l 1-3 > tex/spells.tex
@@ -50,58 +120,59 @@ Use a custom dataset:
 python3 generate.py -f data/spells_ita.json -n Alarm > tex/spells.tex
 ```
 
-Compile the final PDF:
+Compile the final spell PDF:
 
 ```bash
 latexmk -xelatex -cd tex/cards.tex tex/printable.tex
 ```
 
-### GUI
 
-Start the GUI from the repository root:
+### CLI: Items
 
-```bash
-python3 gui/app.py
-```
-
-Alternatively:
-
-```bash
-python3 -m gui.app
-```
-
-The GUI currently supports:
-
-- selecting the spell dataset JSON file
-- filtering by class, level, school and name
-- generating `tex/spells.tex`
-- compiling the final spell PDF
-- generating `tex/items.tex`
-- compiling the standard item PDF
-- compiling the one-page item PDF for 9 copies
-
-### Items
-
-The item flow is available from the CLI, backend and GUI.
-
-Generate `tex/items.tex` from an item dataset:
+Generate `tex/items.tex`:
 
 ```bash
 python3 generate_items.py -f data/items_test.json > tex/items.tex
 ```
 
-You can also select a specific item by name:
+Generate a specific item:
 
 ```bash
 python3 generate_items.py -f data/items_test.json -n "Pozione di Cura" > tex/items.tex
 ```
 
-The item pipeline supports:
+Compile the standard item PDF:
 
-- overlay images
-- overlay opacity
-- lightweight markdown-like formatting in item text
-- one-page PDF generation for 9 copies of the same generated card
+```bash
+latexmk -xelatex -cd tex/items_cards.tex tex/printable_items.tex
+```
+
+Compile the one-page item PDF:
+
+```bash
+latexmk -xelatex -cd tex/items_cards.tex tex/printable_onepage.tex
+```
+
+
+## Python Backend Usage
+
+Generate spell TeX from Python:
+
+```bash
+python3 -c 'from spelldeck.spells_service import generate_spells_tex_file; print(generate_spells_tex_file(names=["Alarm"]))'
+```
+
+Compile the spell PDF:
+
+```bash
+python3 -c 'from spelldeck.compiler import compile_spell_pdf; r = compile_spell_pdf(); print(r.returncode, r.output_pdf)'
+```
+
+Generate item TeX from Python:
+
+```bash
+python3 -c 'from spelldeck.items_service import generate_items_tex_file; print(generate_items_tex_file(names=["Pozione di Cura"]))'
+```
 
 Compile the standard item PDF:
 
@@ -109,194 +180,83 @@ Compile the standard item PDF:
 python3 -c 'from spelldeck.compiler import compile_items_pdf; r = compile_items_pdf(); print(r.returncode, r.output_pdf)'
 ```
 
-Compile the one-page item PDF for 9 copies of the generated card:
+Compile the one-page item PDF:
 
 ```bash
 python3 -c 'from spelldeck.compiler import compile_single_page_items_pdf; r = compile_single_page_items_pdf(); print(r.returncode, r.output_pdf)'
 ```
 
-For multi-value filters, use comma-separated values such as:
 
-- `wizard, bard`
-- `1, 2, 5-7`
-- `abjuration, evocation`
-- `Alarm, Augury`
+## Item Features
+
+The item pipeline supports:
+
+- overlay images
+- overlay opacity
+- lightweight markdown-like formatting in item text
+
+Supported formatting in item text:
+
+- `**text**` -> bold
+- `__text__` -> italic
+- blank line -> paragraph break
+- single newline -> forced line break
+
+
+## Fonts and Paper
+
+The cards are designed around XeLaTeX and the `Mrs Eaves` font. If that font is
+not available on your system, XeLaTeX may fall back poorly or fail depending on
+your setup.
+
+Printable layouts currently target A4. If you need another paper size, adjust:
+
+- `tex/printable.tex`
+- `tex/printable_items.tex`
+- `tex/printable_onepage.tex`
+
 
 ## Tests
 
-Run the full test suite from the repository root:
+Run the full test suite:
 
 ```bash
 python3 -m unittest discover
 ```
 
-Run only the newer backend tests:
+Run only spell backend tests:
 
 ```bash
-python3 -m unittest tests.test_spells_service tests.test_compiler
+python3 -m unittest tests.test_spells_data tests.test_spells_filters tests.test_spells_tex tests.test_spells_service
 ```
 
-## Preview
+Run only item backend tests:
 
-A card looks something like this. As you can see, some (many) cards need to have
-their text truncated because there is simply too much to put on a small card.
+```bash
+python3 -m unittest tests.test_items_data tests.test_items_tex tests.test_items_service
+```
 
-![An example of a spell card](http://i.imgur.com/gLl9PwI.png)
+Run only compiler tests:
 
-## Usage
+```bash
+python3 -m unittest tests.test_compiler
+```
 
-The first step is to create the appropriate LaTeX spell list. To do so, use the
-`generate.py` program. The output of this program should be stored in a file
-called `spells.tex`. By default, this selects all spells in the game so if you
-want to be economical you can filter them by class, level or school. Some
-examples of this:
-
-    # This simply outputs all possible spells.
-    $ ./generate.py > tex/spells.tex
-
-    # This outputs all spells for bards and fighters
-    $ ./generate.py -c bard -c fighter > tex/spells.tex
-
-    # This outputs all spells of levels 0, 2, 5, 6 and 7
-    $ ./generate.py -l 0 -l 2 -l 5-7 > tex/spells.tex
-
-    # This outputs all warlock spells of levels 0 through 3
-    $ ./generate.py -c warlock -l 0-3 > tex/spells.tex
-
-After this is finished, use your favourite LaTeX compiler to first compile
-`cards.tex` which will produce a 8.89x6.35cm page for every spell (same size as
-a Magic: The Gathering card so your sleeves will work!). Then, compile
-`printable.tex` which will arrange them neatly on a sheet of paper so you can
-print them and then cut them to size. I like to use the following command:
-
-    $ latexmk -xelatex -cd tex/cards.tex tex/printable.tex
-
-### Paper sizes
-
-If you are so uncivilised that you don't use the A4 paper format, you should
-change this in the `printable.tex` file. You may also need to change the number
-of cards on each page.
-
-### Fonts
-
-These cards look best, in my opinion, if printed in the font Wizards of the
-Coast uses for the Player's Handbook, which is *Mrs Eaves*. If you compile with
-the XeLaTeX compiler, it will attempt to use this font. It is a proprietary
-font, however, and if you do not own it, use a non-XeLaTeX compiler instead
-which will compile with the default LaTeX font. Feel free to play around with
-this!
-
-## Copyright and credit
-
-The spells included in this repository as well as the background for the cards
-are property of Wizards of the Coast. This stuff should be licensed under the
-Open Gaming License and the LICENSE file included does *not* cover them, only
-the Python and LaTeX code.
-
-Instrumental in creating this product were reddit user Afluffygrue in
-[this](https://www.reddit.com/r/DnD/comments/2yirik/after_hours_of_cleaning_here_are_the_complete/)
-thread for providing the spell data and the people at [UnearthedArcana](https://www.reddit.com/r/UnearthedArcana/) for making all
-sorts of graphical resources available.
-
-If I fucked up here (I don't speak legalese) please contact me before sending a
-team of angry lawyers and/or highly trained assassin-monkeys.
 
 ## Notes
 
-The older sections below still contain useful project-specific notes, especially
-for custom datasets and item cards, but they do not fully describe the newer
-Python backend and GUI introduced later.
+- `generate_items.py` still exists as a compatibility CLI, but the core logic now lives in `spelldeck/items_*`.
+- `generate_single_item.sh` is legacy; the one-page flow is now covered by the backend and GUI.
+- More detailed technical planning and project documentation live under `doc/`.
 
+## Copyright and Credit
 
----
+The spells included in this repository as well as the background for the cards
+are property of Wizards of the Coast. The license in this repository covers the
+Python and LaTeX code, not the game content assets.
 
-
-# JACK
-
-## Carte Magia
-
-Tutte le info precedenti in questo README sono ancora vere ma in aggiunta ho messo anche un parametro aggiuntivo, `-f`, che
-può essere utilizzato per specificare quale file json utilizzare nella creazione delle carte. Esempio:
-
-    python3 generate.py -f "data/spells_ita.json" > tex/spells.tex
-
-
-In questo modo possiamo generare le carte magia con testi personalizzati o tradotti. Molto easy.
-
-
-## Carte Oggetto
-
-Ho creato un nuovo file, `items.tex`, totalmente basato sull'originale `cards.tex`. Mi voglio basare su quello per andare
-a generare le carte per gli oggetti (che le ritengo una cosa diversa dalle carte Arma, imho).
-
-
-Per generare il file `items.tex` da usare come sorgente dei dati, eseguire:
-
-    python3 generate_items.py -f "..." > tex/items.tex
-
-
-E successivamente eseguire la compilazione con:
-
-
-    latexmk -f xelatex -cd tex/items_cards.tex tex/printable_items.tex
-
-
-La struttura base dei dati per le carte oggetto è in "items_test.json".
-
-
-### Stampare 9 volte lo stesso oggetto
-
-Nel caso si voglia ripetere 9 volte lo stesso oggetto, per esempio con una pozione di cura, si può fare:
-
-    latexmk -f xelatex -cd tex/pozioni_di_cura.tex tex/printable_onepage.tex
-
-
-Nel caso specifico, c'è uno script dedicato, `generate_single_item.sh`, che accetta come argomento il nome del file dati sorgente.
-Esempio di utilizzo:
-
-    generate_single_item.sh data/pozioni_di_cura.json
-
-
-### Nuove opzioni per gli oggetti: immagini
-
-C'è la possibilità di specificare delle immagini che verranno poi inserite nelle carte. Per queste immagini,
-è anche possibile specificare l'opacità.
-
-Il tutto parte dal file .tex sorgente che diventa così:
-
-
-    \begin{spell}[images/roundpotioncol.png][0.3]{Pozione di Cura}{Pozione - non comune}{ghiaccio}{50 mo}{-}{no}{13g}
-
-    You regain 2d4 + 2 hit points when you drink this potion.
-
-    \end{spell}
-
-
-In questo esempio sono utilizzati entrambi gli argomenti **opzionali**: il primo è il path all'immagine da usare
-ed il secondo è il valore di opacità dell'immagine inserita.
-
-
-Ora il file ` generate_items.py` sopporta correttamente le opzioni "overlay" e "overlay_opacity" che possono essercinel json dei dati e genera il file tex correttamente.
-
-
-### Formattazione del testo
-
-Ora c'è una specie di "markdown" in `generate_items.py`. Cosa fa ora:
-
-  - **testo** → \textbf{testo}
-  - Riga vuota (doppio \n) → \par
-  - Newline singolo (\n) → \\ (a capo forzato)
-    - Nota bene: non usare il doppio \\ perchè in alcune situazioni incasina la compilazione.
-  - Corsivo con il doppio underscore: __
-
-
-
-## comandi utili
-
-
-Pulizia della cache/file temporanei:
-
-rm -f tex/*.aux tex/*.log tex/*.xdv tex/*.out tex/*.pdf tex/*.fls tex/*.fdb_latexmk
-
-
----
+Instrumental in creating this project were reddit user Afluffygrue in
+[this thread](https://www.reddit.com/r/DnD/comments/2yirik/after_hours_of_cleaning_here_are_the_complete/)
+for providing spell data and the people at
+[UnearthedArcana](https://www.reddit.com/r/UnearthedArcana/) for graphical
+resources.
