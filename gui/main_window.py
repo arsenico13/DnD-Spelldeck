@@ -10,7 +10,12 @@ from spelldeck.compiler import (
 from spelldeck.items_data import DEFAULT_ITEMS_PATH
 from spelldeck.items_service import generate_items_tex_file, preview_items
 from spelldeck.spells_data import DEFAULT_SPELLS_PATH
-from spelldeck.spells_service import generate_spells_tex_file, parse_filter_string, preview_spells
+from spelldeck.spells_service import (
+    analyze_spells_dataset,
+    generate_spells_tex_file,
+    parse_filter_string,
+    preview_spells,
+)
 
 
 class BaseGeneratorTab(ttk.Frame):
@@ -124,16 +129,25 @@ class SpellsTab(BaseGeneratorTab):
         self.level_filter = tk.StringVar()
         self.school_filter = tk.StringVar()
         self.name_filter = tk.StringVar()
+        self.analysis_text = tk.StringVar(value="Analisi dataset non ancora eseguita.")
+        self.class_listbox = None
+        self.school_listbox = None
         super().__init__(master, DEFAULT_SPELLS_PATH)
 
     def _build_form(self):
-        ttk.Label(self, text="Classi").grid(row=1, column=0, sticky="w", pady=4)
-        ttk.Entry(self, textvariable=self.class_filter).grid(
-            row=1, column=1, columnspan=2, sticky="ew", pady=4
+        actions = ttk.Frame(self)
+        actions.grid(row=1, column=0, columnspan=3, sticky="ew", pady=(0, 8))
+        actions.columnconfigure(0, weight=0)
+        actions.columnconfigure(1, weight=1)
+        ttk.Button(actions, text="Analizza", command=self._analyze_dataset).grid(
+            row=0, column=0, sticky="w"
+        )
+        ttk.Label(actions, textvariable=self.analysis_text).grid(
+            row=0, column=1, sticky="w", padx=(12, 0)
         )
 
-        ttk.Label(self, text="Livelli").grid(row=2, column=0, sticky="w", pady=4)
-        ttk.Entry(self, textvariable=self.level_filter).grid(
+        ttk.Label(self, text="Classi").grid(row=2, column=0, sticky="w", pady=4)
+        ttk.Entry(self, textvariable=self.class_filter).grid(
             row=2, column=1, columnspan=2, sticky="ew", pady=4
         )
 
@@ -142,15 +156,47 @@ class SpellsTab(BaseGeneratorTab):
             row=3, column=1, columnspan=2, sticky="ew", pady=4
         )
 
-        ttk.Label(self, text="Nomi").grid(row=4, column=0, sticky="w", pady=4)
-        ttk.Entry(self, textvariable=self.name_filter).grid(
-            row=4, column=1, columnspan=2, sticky="ew", pady=4
+        analysis_frame = ttk.Frame(self)
+        analysis_frame.grid(row=4, column=0, columnspan=3, sticky="nsew", pady=(4, 10))
+        analysis_frame.columnconfigure(0, weight=1)
+        analysis_frame.columnconfigure(1, weight=1)
+
+        class_frame = ttk.LabelFrame(analysis_frame, text="Classi trovate")
+        class_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 6))
+        class_frame.columnconfigure(0, weight=1)
+        class_frame.rowconfigure(0, weight=1)
+        self.class_listbox = tk.Listbox(class_frame, selectmode="extended", exportselection=False, height=6)
+        self.class_listbox.grid(row=0, column=0, sticky="nsew")
+        class_scrollbar = ttk.Scrollbar(class_frame, orient="vertical", command=self.class_listbox.yview)
+        class_scrollbar.grid(row=0, column=1, sticky="ns")
+        self.class_listbox.configure(yscrollcommand=class_scrollbar.set)
+        self.class_listbox.bind("<<ListboxSelect>>", self._on_class_select)
+
+        school_frame = ttk.LabelFrame(analysis_frame, text="Scuole trovate")
+        school_frame.grid(row=0, column=1, sticky="nsew", padx=(6, 0))
+        school_frame.columnconfigure(0, weight=1)
+        school_frame.rowconfigure(0, weight=1)
+        self.school_listbox = tk.Listbox(school_frame, selectmode="extended", exportselection=False, height=6)
+        self.school_listbox.grid(row=0, column=0, sticky="nsew")
+        school_scrollbar = ttk.Scrollbar(school_frame, orient="vertical", command=self.school_listbox.yview)
+        school_scrollbar.grid(row=0, column=1, sticky="ns")
+        self.school_listbox.configure(yscrollcommand=school_scrollbar.set)
+        self.school_listbox.bind("<<ListboxSelect>>", self._on_school_select)
+
+        ttk.Label(self, text="Livelli").grid(row=5, column=0, sticky="w", pady=4)
+        ttk.Entry(self, textvariable=self.level_filter).grid(
+            row=5, column=1, columnspan=2, sticky="ew", pady=4
         )
 
-        ttk.Label(self, text=self.hint_text).grid(row=5, column=0, columnspan=3, sticky="w", pady=(4, 10))
+        ttk.Label(self, text="Nomi").grid(row=6, column=0, sticky="w", pady=4)
+        ttk.Entry(self, textvariable=self.name_filter).grid(
+            row=6, column=1, columnspan=2, sticky="ew", pady=4
+        )
+
+        ttk.Label(self, text=self.hint_text).grid(row=7, column=0, columnspan=3, sticky="w", pady=(4, 10))
 
         buttons = ttk.Frame(self)
-        buttons.grid(row=6, column=0, columnspan=3, sticky="ew", pady=(0, 10))
+        buttons.grid(row=8, column=0, columnspan=3, sticky="ew", pady=(0, 10))
         buttons.columnconfigure(0, weight=1)
         buttons.columnconfigure(1, weight=1)
         buttons.columnconfigure(2, weight=1)
@@ -172,6 +218,47 @@ class SpellsTab(BaseGeneratorTab):
             "schools": parse_filter_string(self.school_filter.get()),
             "names": parse_filter_string(self.name_filter.get()),
         }
+
+    def _analyze_dataset(self):
+        try:
+            result = analyze_spells_dataset(self._resolve_dataset_path(DEFAULT_SPELLS_PATH))
+        except Exception as exc:
+            self._show_error("Errore", f"Errore analisi dataset: {exc}")
+            return
+
+        self.class_listbox.delete(0, "end")
+        self.school_listbox.delete(0, "end")
+
+        for value in result.classes:
+            self.class_listbox.insert("end", value)
+        for value in result.schools:
+            self.school_listbox.insert("end", value)
+
+        self._apply_existing_multiselect_filters()
+        self.analysis_text.set(
+            f"Dataset analizzato: {result.spell_count} magie | classi: {len(result.classes)} | scuole: {len(result.schools)}"
+        )
+        self._set_status("Analisi dataset magie completata.")
+
+    def _apply_existing_multiselect_filters(self):
+        selected_classes = set(parse_filter_string(self.class_filter.get()) or [])
+        selected_schools = set(parse_filter_string(self.school_filter.get()) or [])
+
+        for index in range(self.class_listbox.size()):
+            if self.class_listbox.get(index).lower() in selected_classes:
+                self.class_listbox.selection_set(index)
+
+        for index in range(self.school_listbox.size()):
+            if self.school_listbox.get(index).lower() in selected_schools:
+                self.school_listbox.selection_set(index)
+
+    def _on_class_select(self, _event=None):
+        selected = [self.class_listbox.get(index) for index in self.class_listbox.curselection()]
+        self.class_filter.set(", ".join(selected))
+
+    def _on_school_select(self, _event=None):
+        selected = [self.school_listbox.get(index) for index in self.school_listbox.curselection()]
+        self.school_filter.set(", ".join(selected))
 
     def _generate_tex(self):
         try:

@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 
 from spelldeck.spells_service import (
+    analyze_spells_dataset,
     generate_spells_tex_file,
     parse_filter_string,
     preview_spells,
@@ -60,3 +61,10 @@ class TestSpellsService(unittest.TestCase):
 
         self.assertEqual(2, result.spell_count)
         self.assertEqual(["Alarm", "Augury"], result.names)
+
+    def test_analyze_spells_dataset(self):
+        result = analyze_spells_dataset()
+
+        self.assertGreater(result.spell_count, 0)
+        self.assertIn("Wizard", result.classes)
+        self.assertIn("Abjuration", result.schools)

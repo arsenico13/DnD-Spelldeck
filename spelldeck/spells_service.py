@@ -26,6 +26,13 @@ class SpellPreviewResult:
         return len(self.names)
 
 
+@dataclass
+class SpellDatasetAnalysis:
+    classes: list[str]
+    schools: list[str]
+    spell_count: int
+
+
 def parse_filter_string(raw_value):
     if raw_value is None:
         return None
@@ -57,6 +64,18 @@ def generate_spells_tex(
     )
 
     return tex_content, spell_items, truncated_count
+
+
+def analyze_spells_dataset(dataset_path=None):
+    spells = load_spells(dataset_path)
+    classes = sorted({spell_class for spell in spells.values() for spell_class in spell["classes"]})
+    schools = sorted({spell["school"] for spell in spells.values()})
+
+    return SpellDatasetAnalysis(
+        classes=classes,
+        schools=schools,
+        spell_count=len(spells),
+    )
 
 
 def preview_spells(
