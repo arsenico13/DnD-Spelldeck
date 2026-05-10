@@ -8,7 +8,7 @@ Ad oggi il repository supporta:
 
 - generazione carte magia tramite pipeline Python + LaTeX
 - generazione carte oggetto tramite script separati
-- GUI desktop Python minima per il flusso magie
+- GUI desktop Python per i flussi magie e oggetti
 - backend Python riusabile anche per il dominio oggetti
 - compilazione PDF oggetti disponibile dal backend Python
 
@@ -84,7 +84,11 @@ La GUI desktop introdotta in Fase 2 si trova in:
 - `gui/app.py`
 - `gui/main_window.py`
 
-La GUI e' realizzata con `tkinter` e al momento copre solo il dominio magie.
+La GUI e' realizzata con `tkinter` e ora copre:
+
+- dominio magie
+- dominio oggetti
+- caso one-page per 9 copie dello stesso oggetto
 
 ### Test
 
@@ -277,6 +281,14 @@ Questo flusso e' disponibile in due modi:
 - CLI
 - GUI desktop `tkinter`
 
+Per gli oggetti il flusso disponibile e':
+
+1. caricare dataset JSON oggetti
+2. filtrare opzionalmente per nome o classi legacy
+3. generare `tex/items.tex`
+4. compilare `tex/printable_items.pdf`
+5. oppure compilare `tex/printable_onepage.pdf` per il caso 9 copie
+
 ## Utilizzo da CLI
 
 ### Generare tutte le magie
@@ -365,6 +377,9 @@ python3 -m gui.app
 - generazione del solo file TeX
 - generazione del PDF completo
 - visualizzazione log ed esito finale
+- tab dedicata agli oggetti con flusso separato
+- generazione PDF standard oggetti
+- generazione PDF one-page per 9 copie
 
 ### Convenzioni nei campi filtro GUI
 
@@ -377,12 +392,18 @@ Esempi:
 - `abjuration, evocation`
 - `Alarm, Augury`
 
+Nel tab oggetti:
+
+- `Pozione di Cura, Armor of Resistance`
+- `bard`
+
 ### Flusso tipico GUI
 
 1. avviare `python3 gui/app.py`
 2. selezionare o confermare il dataset JSON
 3. inserire eventuali filtri
-4. cliccare `Genera TeX` oppure `Genera PDF`
+4. scegliere il tab `Magie` oppure `Oggetti`
+5. cliccare `Genera TeX`, `Genera PDF` o `Genera PDF 9 copie`
 5. leggere stato e log nella parte bassa della finestra
 
 ## Stato del dominio oggetti
@@ -395,7 +416,7 @@ Significa che:
 - esistono template e dataset dedicati
 - ora esiste anche un primo core Python dedicato in `spelldeck/items_*`
 - `generate_items.py` e' stato alleggerito, ma resta ancora un wrapper CLI legacy
-- non esiste ancora supporto GUI per gli oggetti
+- esiste supporto GUI per gli oggetti
 - il compilatore Python ora supporta anche layout standard e one-page degli oggetti
 
 ## Test automatici
@@ -569,14 +590,13 @@ Completato:
 - Fase 1 del refactor magie
 - estrazione core Python riusabile
 - backend Python per generazione e compilazione magie
-- GUI desktop `tkinter` MVP per le magie
+- GUI desktop `tkinter` per magie e oggetti
 - primo refactor del dominio oggetti con backend e test di base
 - compilazione PDF oggetti nel backend Python
 - nuova suite test
 
 Non ancora fatto:
 
-- supporto oggetti nella GUI
 - preview grafica embedded del PDF
 - riallineamento del `Makefile`
 

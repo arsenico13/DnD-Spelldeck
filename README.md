@@ -12,7 +12,7 @@ The repository currently includes:
 
 - a CLI flow for spell cards
 - a reusable Python backend for spell generation and LaTeX compilation
-- a minimal desktop GUI written in Python with `tkinter` for spell cards
+- a desktop GUI written in Python with `tkinter` for spell and item cards
 - a reusable Python backend for item TeX generation
 - a separate CLI flow for item cards
 
@@ -76,11 +76,13 @@ The GUI currently supports:
 - filtering by class, level, school and name
 - generating `tex/spells.tex`
 - compiling the final spell PDF
+- generating `tex/items.tex`
+- compiling the standard item PDF
+- compiling the one-page item PDF for 9 copies
 
 ### Items
 
-The item flow is currently available from the CLI and backend, but is not yet
-integrated into the GUI.
+The item flow is available from the CLI, backend and GUI.
 
 Generate `tex/items.tex` from an item dataset:
 
@@ -99,6 +101,7 @@ The item pipeline supports:
 - overlay images
 - overlay opacity
 - lightweight markdown-like formatting in item text
+- one-page PDF generation for 9 copies of the same generated card
 
 Compile the standard item PDF:
 

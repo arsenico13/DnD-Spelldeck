@@ -14,8 +14,8 @@ from gui.main_window import SpellDeckMainWindow
 
 def main():
     root = tk.Tk()
-    root.title("D&D Spelldeck - Magie")
-    root.minsize(760, 520)
+    root.title("D&D Spelldeck")
+    root.minsize(860, 560)
     SpellDeckMainWindow(root)
     root.mainloop()
 
