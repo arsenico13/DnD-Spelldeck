@@ -6,6 +6,97 @@ to make this easier by allowing you to create a deck of spells; a pile of cards
 with all your spells and the most important information about them so you can
 speed up the game.
 
+## Current Status
+
+The repository currently includes:
+
+- a CLI flow for spell cards
+- a reusable Python backend for spell generation and LaTeX compilation
+- a minimal desktop GUI written in Python with `tkinter` for spell cards
+- a separate, older flow for item cards
+
+The spell flow is the most up to date part of the project.
+
+## Requirements
+
+To use the current spell pipeline you need:
+
+- Python 3
+- `latexmk`
+- XeLaTeX
+
+Unit tests only require Python 3.
+
+## Quick Start
+
+### CLI
+
+Generate `tex/spells.tex`:
+
+```bash
+python3 generate.py > tex/spells.tex
+```
+
+Generate only selected spells:
+
+```bash
+python3 generate.py -c wizard -l 1-3 > tex/spells.tex
+```
+
+Use a custom dataset:
+
+```bash
+python3 generate.py -f data/spells_ita.json -n Alarm > tex/spells.tex
+```
+
+Compile the final PDF:
+
+```bash
+latexmk -xelatex -cd tex/cards.tex tex/printable.tex
+```
+
+### GUI
+
+Start the GUI from the repository root:
+
+```bash
+python3 gui/app.py
+```
+
+Alternatively:
+
+```bash
+python3 -m gui.app
+```
+
+The GUI currently supports:
+
+- selecting the spell dataset JSON file
+- filtering by class, level, school and name
+- generating `tex/spells.tex`
+- compiling the final spell PDF
+
+For multi-value filters, use comma-separated values such as:
+
+- `wizard, bard`
+- `1, 2, 5-7`
+- `abjuration, evocation`
+- `Alarm, Augury`
+
+## Tests
+
+Run the full test suite from the repository root:
+
+```bash
+python3 -m unittest discover
+```
+
+Run only the newer backend tests:
+
+```bash
+python3 -m unittest tests.test_spells_service tests.test_compiler
+```
+
 ## Preview
 
 A card looks something like this. As you can see, some (many) cards need to have
@@ -70,6 +161,12 @@ sorts of graphical resources available.
 
 If I fucked up here (I don't speak legalese) please contact me before sending a
 team of angry lawyers and/or highly trained assassin-monkeys.
+
+## Notes
+
+The older sections below still contain useful project-specific notes, especially
+for custom datasets and item cards, but they do not fully describe the newer
+Python backend and GUI introduced later.
 
 
 ---
