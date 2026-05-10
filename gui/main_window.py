@@ -8,9 +8,9 @@ from spelldeck.compiler import (
     compile_spell_pdf,
 )
 from spelldeck.items_data import DEFAULT_ITEMS_PATH
-from spelldeck.items_service import generate_items_tex_file
+from spelldeck.items_service import generate_items_tex_file, preview_items
 from spelldeck.spells_data import DEFAULT_SPELLS_PATH
-from spelldeck.spells_service import generate_spells_tex_file, parse_filter_string
+from spelldeck.spells_service import generate_spells_tex_file, parse_filter_string, preview_spells
 
 
 class BaseGeneratorTab(ttk.Frame):
@@ -80,6 +80,39 @@ class BaseGeneratorTab(ttk.Frame):
         if compile_result.stderr:
             self._append_log(compile_result.stderr)
 
+    def _show_preview_popup(self, title, names):
+        preview_window = tk.Toplevel(self)
+        preview_window.title(title)
+        preview_window.minsize(420, 360)
+        preview_window.transient(self.winfo_toplevel())
+        preview_window.grab_set()
+        preview_window.columnconfigure(0, weight=1)
+        preview_window.rowconfigure(1, weight=1)
+
+        ttk.Label(
+            preview_window,
+            text=f"Elementi selezionati: {len(names)}",
+            padding=(12, 12, 12, 6),
+        ).grid(row=0, column=0, sticky="w")
+
+        list_frame = ttk.Frame(preview_window, padding=(12, 0, 12, 12))
+        list_frame.grid(row=1, column=0, sticky="nsew")
+        list_frame.columnconfigure(0, weight=1)
+        list_frame.rowconfigure(0, weight=1)
+
+        listbox = tk.Listbox(list_frame)
+        listbox.grid(row=0, column=0, sticky="nsew")
+        scrollbar = ttk.Scrollbar(list_frame, orient="vertical", command=listbox.yview)
+        scrollbar.grid(row=0, column=1, sticky="ns")
+        listbox.configure(yscrollcommand=scrollbar.set)
+
+        for name in names:
+            listbox.insert("end", name)
+
+        ttk.Button(preview_window, text="Chiudi", command=preview_window.destroy).grid(
+            row=2, column=0, sticky="e", padx=12, pady=(0, 12)
+        )
+
 
 class SpellsTab(BaseGeneratorTab):
     dataset_label = "Dataset magie"
@@ -120,11 +153,15 @@ class SpellsTab(BaseGeneratorTab):
         buttons.grid(row=6, column=0, columnspan=3, sticky="ew", pady=(0, 10))
         buttons.columnconfigure(0, weight=1)
         buttons.columnconfigure(1, weight=1)
-        ttk.Button(buttons, text="Genera TeX", command=self._generate_tex).grid(
+        buttons.columnconfigure(2, weight=1)
+        ttk.Button(buttons, text="Preview", command=self._preview).grid(
             row=0, column=0, sticky="ew", padx=(0, 6)
         )
+        ttk.Button(buttons, text="Genera TeX", command=self._generate_tex).grid(
+            row=0, column=1, sticky="ew", padx=6
+        )
         ttk.Button(buttons, text="Genera PDF", command=self._generate_pdf).grid(
-            row=0, column=1, sticky="ew", padx=(6, 0)
+            row=0, column=2, sticky="ew", padx=(6, 0)
         )
 
     def _collect_filters(self):
@@ -147,6 +184,16 @@ class SpellsTab(BaseGeneratorTab):
             f"TeX generato: {result.output_path} | magie: {result.spell_count} | troncate: {result.truncated_count}"
         )
         return result
+
+    def _preview(self):
+        try:
+            result = preview_spells(**self._collect_filters())
+        except Exception as exc:
+            self._show_error("Errore", f"Errore preview: {exc}")
+            return
+
+        self._set_status(f"Preview magie: {result.spell_count} elementi")
+        self._show_preview_popup("Preview magie", result.names)
 
     def _generate_pdf(self):
         generation_result = self._generate_tex()
@@ -198,14 +245,18 @@ class ItemsTab(BaseGeneratorTab):
         buttons.columnconfigure(0, weight=1)
         buttons.columnconfigure(1, weight=1)
         buttons.columnconfigure(2, weight=1)
-        ttk.Button(buttons, text="Genera TeX", command=self._generate_tex).grid(
+        buttons.columnconfigure(3, weight=1)
+        ttk.Button(buttons, text="Preview", command=self._preview).grid(
             row=0, column=0, sticky="ew", padx=(0, 6)
         )
-        ttk.Button(buttons, text="Genera PDF", command=self._generate_pdf).grid(
+        ttk.Button(buttons, text="Genera TeX", command=self._generate_tex).grid(
             row=0, column=1, sticky="ew", padx=6
         )
+        ttk.Button(buttons, text="Genera PDF", command=self._generate_pdf).grid(
+            row=0, column=2, sticky="ew", padx=6
+        )
         ttk.Button(buttons, text="Genera PDF 9 copie", command=self._generate_single_page_pdf).grid(
-            row=0, column=2, sticky="ew", padx=(6, 0)
+            row=0, column=3, sticky="ew", padx=(6, 0)
         )
 
     def _collect_filters(self):
@@ -230,6 +281,16 @@ class ItemsTab(BaseGeneratorTab):
             f"TeX generato: {result.output_path} | oggetti: {result.item_count} | troncati: {result.truncated_count}{truncated_suffix}"
         )
         return result
+
+    def _preview(self):
+        try:
+            result = preview_items(**self._collect_filters())
+        except Exception as exc:
+            self._show_error("Errore", f"Errore preview: {exc}")
+            return
+
+        self._set_status(f"Preview oggetti: {result.item_count} elementi")
+        self._show_preview_popup("Preview oggetti", result.names)
 
     def _generate_pdf(self):
         generation_result = self._generate_tex()

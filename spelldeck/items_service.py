@@ -20,6 +20,15 @@ class ItemGenerationResult:
     truncated_names: list[str]
 
 
+@dataclass
+class ItemPreviewResult:
+    names: list[str]
+
+    @property
+    def item_count(self):
+        return len(self.names)
+
+
 def generate_items_tex(dataset_path=None, names=None, classes=None):
     items = load_items(dataset_path or DEFAULT_ITEMS_PATH)
     item_items = filter_items(items, names=names, classes=classes)
@@ -32,6 +41,15 @@ def generate_items_tex(dataset_path=None, names=None, classes=None):
     ]
 
     return tex_content, item_items, truncated_names
+
+
+def preview_items(dataset_path=None, names=None, classes=None):
+    _, item_items, _ = generate_items_tex(
+        dataset_path=dataset_path,
+        names=names,
+        classes=classes,
+    )
+    return ItemPreviewResult(names=[name for name, _ in item_items])
 
 
 def generate_items_tex_file(
@@ -54,4 +72,3 @@ def generate_items_tex_file(
         truncated_count=len(truncated_names),
         truncated_names=truncated_names,
     )
-

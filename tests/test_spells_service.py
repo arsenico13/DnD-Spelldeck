@@ -3,7 +3,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from spelldeck.spells_service import generate_spells_tex_file, parse_filter_string
+from spelldeck.spells_service import (
+    generate_spells_tex_file,
+    parse_filter_string,
+    preview_spells,
+)
 
 
 class TestSpellsService(unittest.TestCase):
@@ -51,3 +55,8 @@ class TestSpellsService(unittest.TestCase):
             self.assertEqual(0, result.truncated_count)
             self.assertIn("\\begin{spell}{Test Spell}", output_path.read_text())
 
+    def test_preview_spells(self):
+        result = preview_spells(names=["Alarm", "Augury"])
+
+        self.assertEqual(2, result.spell_count)
+        self.assertEqual(["Alarm", "Augury"], result.names)

@@ -17,6 +17,15 @@ class SpellGenerationResult:
     truncated_count: int
 
 
+@dataclass
+class SpellPreviewResult:
+    names: list[str]
+
+    @property
+    def spell_count(self):
+        return len(self.names)
+
+
 def parse_filter_string(raw_value):
     if raw_value is None:
         return None
@@ -50,6 +59,23 @@ def generate_spells_tex(
     return tex_content, spell_items, truncated_count
 
 
+def preview_spells(
+    dataset_path=None,
+    classes=None,
+    levels=None,
+    schools=None,
+    names=None,
+):
+    _, spell_items, _ = generate_spells_tex(
+        dataset_path=dataset_path,
+        classes=classes,
+        levels=levels,
+        schools=schools,
+        names=names,
+    )
+    return SpellPreviewResult(names=[name for name, _ in spell_items])
+
+
 def generate_spells_tex_file(
     dataset_path=None,
     classes=None,
@@ -73,4 +99,3 @@ def generate_spells_tex_file(
         spell_count=len(spell_items),
         truncated_count=truncated_count,
     )
-

@@ -3,7 +3,11 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from spelldeck.items_service import generate_items_tex_file, parse_filter_string
+from spelldeck.items_service import (
+    generate_items_tex_file,
+    parse_filter_string,
+    preview_items,
+)
 
 
 class TestItemsService(unittest.TestCase):
@@ -46,3 +50,9 @@ class TestItemsService(unittest.TestCase):
             self.assertEqual(0, result.truncated_count)
             self.assertEqual([], result.truncated_names)
             self.assertIn("\\begin{spell}{Test Item}", output_path.read_text())
+
+    def test_preview_items(self):
+        result = preview_items(names=["Armor of Resistance", "Pozione di Cura"])
+
+        self.assertEqual(2, result.item_count)
+        self.assertEqual(["Armor of Resistance", "Pozione di Cura"], result.names)
