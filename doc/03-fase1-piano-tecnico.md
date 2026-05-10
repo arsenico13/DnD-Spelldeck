@@ -14,7 +14,7 @@ Incluso:
 - correzione delle fragilita' note negli script esistenti
 - estrazione di funzioni/moduli richiamabili dalla futura GUI
 - aggiunta di test automatici
-- aggiunta di commenti solo dove il codice non e' immediato
+- aggiunta di commenti
 
 Escluso:
 
